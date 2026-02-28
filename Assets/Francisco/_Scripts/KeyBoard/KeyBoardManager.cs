@@ -38,7 +38,7 @@ public class KeyBoardManager : MonoBehaviour
 
     private void Start()
     {
-        gameLevel = GameManager.Instance.GetgameLevel();
+        gameLevel = GameManager.Instance.GetGameLevel();
         SetRandomKeys();
     }
 

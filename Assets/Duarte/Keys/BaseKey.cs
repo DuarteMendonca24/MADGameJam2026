@@ -73,13 +73,16 @@ public class BaseKey : MonoBehaviour
             {
                 case KeyType.Explode:
                     ImpulsePlayer(collision.gameObject);
+                    collision.GetComponent<Movement>().Die();
                     break;
                 case KeyType.Hole:
                     Movement playerMovement = collision.gameObject.GetComponent<Movement>();
                     playerMovement.FallDown(100, GetComponent<SpriteRenderer>().sortingOrder);
+                    collision.GetComponent<Movement>().Die();
                     StartCoroutine(FallDown());
                     break;
                 case KeyType.Range:
+                    collision.GetComponent<Movement>().Die();
                     break;
                 default:
                     break;

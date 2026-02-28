@@ -14,6 +14,7 @@ public class Movement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private bool blockMovement = false;
+    private bool isDead = false;
 
     void Awake()
     {
@@ -28,6 +29,7 @@ public class Movement : MonoBehaviour
         movement.y = 0;
 
         if (blockMovement ) { return; }
+        if (isDead) {  return; }
 
         if (Input.GetKey(KeyCode.D))
         {
@@ -63,6 +65,10 @@ public class Movement : MonoBehaviour
         externalForce = force;
     }
 
+    public void Die()
+    {
+        isDead = true;
+    }
 
     // Applies gravity and correct sorting order to fall down due
     // to a Hole key

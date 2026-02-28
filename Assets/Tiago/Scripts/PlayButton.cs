@@ -14,14 +14,14 @@ public class PlayButton : MonoBehaviour
 
     public void ChangeScene(string scene)
     {
-        transition.SetActive(true);
-        transitionController.PlayTransitionInAnimation();
-        Wait(2f);
-        SceneManager.LoadScene(scene);
+        StartCoroutine(Wait(scene));
     }
 
-    private IEnumerator Wait(float secs)
+    private IEnumerator Wait(string scene)
     {
-        yield return new WaitForSeconds(secs);
+        transition.SetActive(true);
+        transitionController.PlayTransitionInAnimation();
+        yield return new WaitForSeconds(2f);
+        SceneManager.LoadScene(scene);
     }
 }

@@ -5,7 +5,7 @@ public class TransitionController : MonoBehaviour
     public Animator animator;
 
     public void PlayTransitionInAnimation()
-    {
+    { 
         animator.SetTrigger("TransitionIn");
     }
 

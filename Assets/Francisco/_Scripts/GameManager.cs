@@ -4,19 +4,35 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Collections;
+using UnityEditor.PackageManager.Requests;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public enum GameState
+{
+    PauseMenuScreen,
+    InGame,
+    EndGame
+}
+
 public class GameManager : MonoBehaviour
 {
+    public GameObject[] levels;
+    public GameObject transition;
+    private TransitionController transitionController;
+    private Dictionary<int, KeyBoardManager> keyBoardManagers = new Dictionary<int, KeyBoardManager>();
+
+    public GameObject player;
+
     public static GameManager Instance;
 
     public GameState State;
 
     public static event Action<GameState> OnGameStateChanged;
 
-    private int gameLevel = 1;
+    private int currentGameLevel = 1;
 
     private void Awake()
     {
@@ -29,12 +45,29 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        transitionController = transition.GetComponent<TransitionController>();
+        GetKeyboardManagers();
+    }
+
+    private void GetKeyboardManagers()
+    {
+        for(int i = 0; i < levels.Length; i++)
+        {
+            KeyBoardManager kbm = this.transform.GetChild(i).GetComponent<KeyBoardManager>();
+            keyBoardManagers.Add(i+1,kbm);
+        }
     }
 
     private void Start()
     {
-        State = GameState.MainMenuScreen;
+        SetGameLevel(1);
+        StartLevel();
+        State = GameState.InGame;
     }
+
+    public int GetGameLevel() { return currentGameLevel; }
+
+    public void SetGameLevel(int gameLevel) { this.currentGameLevel = gameLevel; }
 
     public void UpdateGameState(GameState newState)
     {
@@ -42,7 +75,7 @@ public class GameManager : MonoBehaviour
 
         switch (newState)
         {
-            case GameState.MainMenuScreen:
+            case GameState.PauseMenuScreen:
                 Cursor.visible = true;
                 break;
             case GameState.InGame:
@@ -58,9 +91,70 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newState);
     }
 
-    public int GetgameLevel() { return gameLevel; }
+    public void OnPlayerDeath()
+    {
+        StartCoroutine(PlayerDeathTransition());
+    }
 
-    public  void SetGameLevel(int gameLevel) { this.gameLevel = gameLevel; }
+    public IEnumerator PlayerDeathTransition()
+    {
+        transitionController.PlayTransitionOutAnimation();
+        ResetLevel();
+        yield return new WaitForSeconds(2f);
+        transitionController.PlayTransitionInAnimation();
+    }
+
+    //Put everything back in place
+    private void ResetLevel()
+    {
+        keyBoardManagers[currentGameLevel].ResetKeyPositions();
+        player.transform.position = keyBoardManagers[currentGameLevel].playerSpawnPosition;
+    }
+
+    public void OnLevelCompleted()
+    {
+        //enquanto fôr um nível "normal"
+        if (currentGameLevel < 4)
+        {
+            SetGameLevel(currentGameLevel + 1);
+            StartCoroutine(TransitionIntoNextLevel());
+        }
+        else
+        {
+            // se fôr o último nível
+        }
+    }
+
+    private IEnumerator TransitionIntoNextLevel()
+    {
+        transitionController.PlayTransitionOutAnimation();
+        yield return new WaitForSeconds(1f);
+        //MOSTRAR BD???
+        //bd.setActive(true)
+        //transitionController.PlayTransitionInAnimation();
+        //yield return new WaitForSeconds(10f);
+        //bd.setActive(false)
+        //transitionController.PlayTransitionOutAnimation();
+
+        StartLevel();
+        yield return new WaitForSeconds(1f);
+        transitionController.PlayTransitionInAnimation();
+    }
+
+    private void StartLevel()
+    {
+        foreach (GameObject level in levels)
+        {
+            if (level.name.Contains(currentGameLevel.ToString()))
+            {
+                level.SetActive(true);
+            }
+            else
+            {
+                level.SetActive(false);
+            }
+        }
+    }
 
     public void StartGame()
     {
@@ -68,16 +162,5 @@ public class GameManager : MonoBehaviour
         //SceneManager.LoadScene("FinalScene");
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
 }
 
-public enum GameState
-{
-    MainMenuScreen,
-    InGame,
-    EndGame
-}
