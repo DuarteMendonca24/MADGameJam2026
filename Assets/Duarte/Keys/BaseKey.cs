@@ -32,18 +32,15 @@ public class BaseKey : MonoBehaviour
     [SerializeField] float raycastDistance;
 
 
-    Collider2D collider;
-    int playerLayerIndex;
+    private Collider2D collider;
+    private int playerLayerIndex;
 
     private void Awake()
     {
         collider = GetComponent<Collider2D>();
         playerLayerIndex = LayerMask.NameToLayer(playerLayerName);
-    }
 
-    private void Start()
-    {
-        transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = keyID;
+        transform.GetChild(0).GetComponent<Canvas>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder;
     }
 
     private void FixedUpdate()
