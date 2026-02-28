@@ -8,7 +8,7 @@ public class SliderDecay : MonoBehaviour
     private Slider escSlider;
 
     private bool filling = false;
-    private float maxLife, damageValue;
+    [SerializeField] private float maxLife, damageValue;
 
     private void Awake()
     {
