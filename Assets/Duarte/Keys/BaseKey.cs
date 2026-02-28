@@ -8,6 +8,8 @@ enum KeyType
     Explode,
     Hole,
     Range,
+    Throw,
+    TP,
     Spawner
 }
 
@@ -37,7 +39,7 @@ public class BaseKey : MonoBehaviour
 
     private void Start()
     {
-        transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = keyID;
+        //transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = keyID;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)
@@ -84,5 +86,6 @@ public class BaseKey : MonoBehaviour
         }
     }
 
-
+    public string GetKeyID() { return keyID; }
+    public void SetKeyID(string keyID) { this.keyID = keyID; }
 }
