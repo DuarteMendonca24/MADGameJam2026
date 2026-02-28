@@ -1472,7 +1472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7891112924248649338, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: keyType
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 9131564738226680925, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -4391,6 +4391,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2080061955082908551, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
+      propertyPath: m_text
+      value: Esc
+      objectReference: {fileID: 0}
     - target: {fileID: 6896266850501898279, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4799,6 +4803,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 2080061955082908551, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
+      propertyPath: m_text
+      value: D
+      objectReference: {fileID: 0}
     - target: {fileID: 6896266850501898279, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: m_Sprite
       value: 
@@ -4817,7 +4825,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7891112924248649338, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: keyType
-      value: 0
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 9131564738226680925, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
