@@ -155,7 +155,7 @@ MonoBehaviour:
   playerLayerName: Player
   keyID: 
   keyType: 0
-  fallingDownSpeed: 10
+  fallingDownSpeed: 30
   fallingDownDuration: 10
   raycastDirections:
   - {x: 1, y: 0}
