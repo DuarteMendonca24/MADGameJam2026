@@ -14,6 +14,9 @@ public class KeyBoardManager : MonoBehaviour
 
     private List<BaseKey> baseKeys = new List<BaseKey>();
 
+    private List<BaseKey> teleportKeys = new List<BaseKey>();
+    private List<BaseKey> noneKeys = new List<BaseKey>();
+
     public Vector2 playerSpawnPosition = new Vector2();
 
     private void Awake()
@@ -27,12 +30,29 @@ public class KeyBoardManager : MonoBehaviour
                 {
                     baseKeys.Add(baseKey);
 
-                    if (baseKey.GetKeyType() == KeyType.Spawner)
+                    switch (baseKey.GetKeyType())
                     {
-                        playerSpawnPosition = grandChild.position;
+                        case KeyType.Spawner:
+                            playerSpawnPosition = grandChild.position;
+                            break;
+                        case KeyType.Teleport:
+                            teleportKeys.Add(baseKey);
+                            break;
+                        case KeyType.None:
+                            noneKeys.Add(baseKey);
+                            break;
+                        default:
+                            break;
                     }
                 }
             }
+        }
+
+        foreach (BaseKey teleportKey in teleportKeys)
+        {
+            int randomIndex = Random.Range(0, noneKeys.Count);
+            Vector2 randomNonePosition = noneKeys[randomIndex].transform.position;
+            teleportKey.SetTeleportPosition(randomNonePosition);
         }
     }
 

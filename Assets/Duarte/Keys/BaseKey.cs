@@ -10,14 +10,14 @@ public enum KeyType
     Hole,
     Range,
     Throw,
-    TP,
+    Teleport,
     Spawner
 }
 
 [RequireComponent(typeof(Collider2D))]
 public class BaseKey : MonoBehaviour
 {
-    
+
     // The player layer to check to detect collisions
     [SerializeField] string playerLayerName;
 
@@ -36,11 +36,12 @@ public class BaseKey : MonoBehaviour
     [SerializeField] List<Vector2> raycastDirections;
     [SerializeField] float raycastDistance;
 
-
     private Collider2D collider;
     private int playerLayerIndex;
 
     private Vector2 keyInitialPosition;
+
+    private Vector2 teleportPosition;
 
 
     private void Awake()
@@ -69,17 +70,20 @@ public class BaseKey : MonoBehaviour
 
         if (collision.gameObject.layer == playerLayerIndex)
         {
+            Movement playerMovement = collision.gameObject.GetComponent<Movement>();
             switch (keyType)
             {
-                case KeyType.Explode:
+                case KeyType.Throw:
                     ImpulsePlayer(collision.gameObject);
                     break;
                 case KeyType.Hole:
-                    Movement playerMovement = collision.gameObject.GetComponent<Movement>();
                     playerMovement.FallDown(100, GetComponent<SpriteRenderer>().sortingOrder);
                     StartCoroutine(FallDown());
                     break;
-                case KeyType.Range:
+                case KeyType.Explode:
+                    break;
+                case KeyType.Teleport:
+                    playerMovement.Teleport(teleportPosition);
                     break;
                 default:
                     break;
@@ -164,6 +168,8 @@ public class BaseKey : MonoBehaviour
     public void SetKeyID(string keyID) { this.keyID = keyID; }
 
     public KeyType GetKeyType() { return keyType; }
+
+    public void SetTeleportPosition(Vector2 position) { teleportPosition = position; }
 
     public void ResetPosition()
     {

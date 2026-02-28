@@ -1,5 +1,6 @@
 using System;
 using UnityEditor.Experimental.GraphView;
+using UnityEditor.UI;
 using UnityEngine;
 
 public class Movement : MonoBehaviour
@@ -72,5 +73,16 @@ public class Movement : MonoBehaviour
         spriteRenderer.sortingOrder = orderingLayer;
         collider.enabled = false;
         blockMovement = true;
+    }
+
+    public void Teleport(Vector2 finalPos)
+    {
+        Color color = spriteRenderer.color;
+        color.a = 0.0f;
+        spriteRenderer.color = color;
+        transform.position = finalPos;
+        color.a = 1.0f;
+        spriteRenderer.color = color;
+
     }
 }
