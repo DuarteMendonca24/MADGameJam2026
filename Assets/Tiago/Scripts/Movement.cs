@@ -8,13 +8,15 @@ public class Movement : MonoBehaviour
     public float moveSpeed = 5f;
 
     public Rigidbody2D rb;
+    
     private Vector2 movement;
-
     private Vector2 externalForce = new Vector2(0.0f, 0.0f);
+    private BoxCollider2D collider;
 
-    void Start()
+    void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
+        collider = GetComponent<BoxCollider2D>();
     }
 
     void Update()
@@ -56,5 +58,13 @@ public class Movement : MonoBehaviour
     public void AddExternalForce(Vector2 force)
     {
         externalForce = force;
+    }
+
+    public void FallDown(int gravityForce, int orderingLayer)
+    {
+        rb.gravityScale = gravityForce;
+        transform.GetChild(0).GetComponent<SpriteRenderer>().sortingOrder = orderingLayer;
+        collider.enabled = false;
+
     }
 }
