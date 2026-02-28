@@ -405,7 +405,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7891112924248649338, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: keyType
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 9131564738226680925, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -802,7 +802,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7891112924248649338, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: keyType
-      value: 0
+      value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 7891112924248649338, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: keyLerpDuration
@@ -1472,7 +1472,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7891112924248649338, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: keyType
-      value: 2
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9131564738226680925, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -1625,6 +1625,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyBoardManager
   lettersOrderManager: {fileID: 2058070812}
+  playerSpawnPosition: {x: 0, y: 0}
 --- !u!212 &522477686
 SpriteRenderer:
   serializedVersion: 2

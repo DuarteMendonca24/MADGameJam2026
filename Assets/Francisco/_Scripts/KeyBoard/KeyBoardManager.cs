@@ -10,7 +10,7 @@ public class KeyBoardManager : MonoBehaviour
 
     private int gameLevel;
 
-    private string keys = "QWERTYUIOPASDFGHJKLÇZXCVBNM1234567890_.`´+?";
+    private string keys = "QWERTYUIOPASDFGHJKLï¿½ZXCVBNM1234567890_.`ï¿½+?";
 
     private List<BaseKey> baseKeys = new List<BaseKey>();
 
@@ -27,12 +27,29 @@ public class KeyBoardManager : MonoBehaviour
                 {
                     baseKeys.Add(baseKey);
 
-                    if (baseKey.GetKeyType() == KeyType.Spawner)
+                    switch (baseKey.GetKeyType())
                     {
-                        playerSpawnPosition = grandChild.position;
+                        case KeyType.Spawner:
+                            playerSpawnPosition = grandChild.position;
+                            break;
+                        case KeyType.Teleport:
+                            teleportKeys.Add(baseKey);
+                            break;
+                        case KeyType.None:
+                            noneKeys.Add(baseKey);
+                            break;
+                        default:
+                            break;
                     }
                 }
             }
+        }
+
+        foreach (BaseKey teleportKey in teleportKeys)
+        {
+            int randomIndex = Random.Range(0, noneKeys.Count);
+            Vector2 randomNonePosition = noneKeys[randomIndex].transform.position;
+            teleportKey.SetTeleportPosition(randomNonePosition);
         }
     }
 
