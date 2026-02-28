@@ -24,6 +24,8 @@ public class BaseKey : MonoBehaviour
     // The key unique id should correspond to one of the keyboard keys
     [SerializeField] string keyID;
     [SerializeField] KeyType keyType;
+    [SerializeField] float keyLerpTargetIncrement;
+    [SerializeField] float keyLerpDuration;
 
     [Header("Key Hole Configurations")]
     [SerializeField] float fallingDownSpeed;
@@ -36,6 +38,9 @@ public class BaseKey : MonoBehaviour
 
     private Collider2D collider;
     private int playerLayerIndex;
+    
+    private Vector2 keyInitialPosition;
+
 
     private void Awake()
     {
@@ -43,6 +48,8 @@ public class BaseKey : MonoBehaviour
         playerLayerIndex = LayerMask.NameToLayer(playerLayerName);
 
         transform.GetChild(0).GetComponent<Canvas>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder;
+
+        keyInitialPosition = transform.position;
     }
 
     private void FixedUpdate()
@@ -53,7 +60,11 @@ public class BaseKey : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if (keyType == KeyType.None || keyType == KeyType.Spawner) return;
+        if (keyType == KeyType.None || keyType == KeyType.Spawner)
+        {
+            StartCoroutine(LerpKeyPosition(true));
+            return;
+        }
 
         if (collision.gameObject.layer == playerLayerIndex)
         {
@@ -69,7 +80,17 @@ public class BaseKey : MonoBehaviour
                     break;
                 case KeyType.Range:
                     break;
+                default:
+                    break;
             }
+        }
+    }
+
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        if (keyType == KeyType.None || keyType == KeyType.Spawner)
+        {
+            StartCoroutine(LerpKeyPosition(false));
         }
     }
 
@@ -108,10 +129,36 @@ public class BaseKey : MonoBehaviour
                 print("Player Hit by Raycast");
             }
 
-           
+
 
         }
     }
+
+    private IEnumerator LerpKeyPosition(bool isPressed)
+    {
+        float time = 0;
+        Vector2 startPosition = transform.position;
+        Vector2 targetPosition;
+
+        if (isPressed)
+        {
+            targetPosition = new Vector2(startPosition.x, startPosition.y + keyLerpTargetIncrement);
+        }
+        else
+        {
+            targetPosition = keyInitialPosition;
+
+        }
+
+        while (time < keyLerpDuration)
+        {
+            transform.position = Vector2.Lerp(startPosition, targetPosition, time / keyLerpDuration);
+            time += Time.deltaTime;
+            yield return null;
+        }
+        transform.position = targetPosition;
+    }
+
     public string GetKeyID() { return keyID; }
     public void SetKeyID(string keyID) { this.keyID = keyID; }
 }

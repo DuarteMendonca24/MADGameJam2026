@@ -155,6 +155,8 @@ MonoBehaviour:
   playerLayerName: Player
   keyID: 
   keyType: 0
+  keyLerpTargetIncrement: -0.2
+  keyLerpDuration: 0.1
   fallingDownSpeed: 30
   fallingDownDuration: 10
   raycastDirections:
