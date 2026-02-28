@@ -39,7 +39,7 @@ public class BaseKey : MonoBehaviour
     private Collider2D collider;
     private int playerLayerIndex;
     
-    private Vector2 keyLerpInitialPosition;
+    private Vector2 keyInitialPosition;
 
 
     private void Awake()
@@ -49,7 +49,7 @@ public class BaseKey : MonoBehaviour
 
         transform.GetChild(0).GetComponent<Canvas>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder;
 
-        keyLerpInitialPosition = transform.position;
+        keyInitialPosition = transform.position;
     }
 
     private void FixedUpdate()
@@ -146,7 +146,7 @@ public class BaseKey : MonoBehaviour
         }
         else
         {
-            targetPosition = keyLerpInitialPosition;
+            targetPosition = keyInitialPosition;
 
         }
 
