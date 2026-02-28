@@ -1,9 +1,8 @@
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
 using TMPro;
+using UnityEditor.UI;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 public class KeyBoardManager : MonoBehaviour
 {
@@ -12,6 +11,24 @@ public class KeyBoardManager : MonoBehaviour
     private int gameLevel;
 
     private string keys = "QWERTYUIOPASDFGHJKLÇZXCVBNM1234567890_.`´+?";
+
+    private List<BaseKey> baseKeys = new List<BaseKey>();
+
+    private void Awake()
+    {
+        foreach (Transform child in transform)
+        {
+            foreach (Transform grandChild in child)
+            {
+                BaseKey baseKey = grandChild.GetComponent<BaseKey>();
+                if (baseKey != null)
+                {
+                    baseKeys.Add(baseKey);
+                }
+            }
+        }
+    }
+
     private void Start()
     {
         gameLevel = GameManager.Instance.GetgameLevel();
@@ -22,9 +39,9 @@ public class KeyBoardManager : MonoBehaviour
     {
         string setOfKeys = CreateSetOfKeys();
         Debug.Log(setOfKeys.Length);
-        foreach(Transform rows in transform)
+        foreach (Transform rows in transform)
         {
-            foreach (Transform key in rows) 
+            foreach (Transform key in rows)
             {
                 int chosedIndex = Random.Range(0, setOfKeys.Length);
 
@@ -37,18 +54,18 @@ public class KeyBoardManager : MonoBehaviour
                 }
 
                 else { key.GetChild(0).Find("Text (TMP)").gameObject.GetComponent<TextMeshProUGUI>().text = key.gameObject.GetComponent<BaseKey>().GetKeyID(); }
-                
+
 
                 Debug.Log(setOfKeys);
             }
         }
     }
 
-    private string CreateSetOfKeys() 
+    private string CreateSetOfKeys()
     {
-        string setOfKeys = keys;   
+        string setOfKeys = keys;
         Debug.Log(setOfKeys);
-        for (int i = setOfKeys.Length - 1; i > 0 ; i--) 
+        for (int i = setOfKeys.Length - 1; i > 0; i--)
         {
             if (lettersOrderManager.GetWordsByLevel()[gameLevel - 1].Contains(setOfKeys[i]))
             {
@@ -58,5 +75,13 @@ public class KeyBoardManager : MonoBehaviour
         }
 
         return setOfKeys;
+    }
+
+    public void ResetKeyPositions()
+    {
+        foreach (BaseKey key in baseKeys)
+        {
+            key.ResetPosition();
+        }
     }
 }
