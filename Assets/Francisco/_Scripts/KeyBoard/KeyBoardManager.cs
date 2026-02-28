@@ -1,9 +1,8 @@
 using System.Collections.Generic;
-using System.Collections.Specialized;
-using System.Linq;
 using TMPro;
+using UnityEditor.UI;
 using UnityEngine;
-using UnityEngine.InputSystem;
+
 
 public class KeyBoardManager : MonoBehaviour
 {
@@ -12,6 +11,51 @@ public class KeyBoardManager : MonoBehaviour
     private int gameLevel;
 
     private string keys = "QWERTYUIOPASDFGHJKLÇZXCVBNM1234567890_.`´+?";
+
+    private List<BaseKey> baseKeys = new List<BaseKey>();
+
+    private List<BaseKey> teleportKeys = new List<BaseKey>();
+    private List<BaseKey> noneKeys = new List<BaseKey>();
+
+    public Vector2 playerSpawnPosition = new Vector2();
+
+    private void Awake()
+    {
+        foreach (Transform child in transform)
+        {
+            foreach (Transform grandChild in child)
+            {
+                BaseKey baseKey = grandChild.GetComponent<BaseKey>();
+                if (baseKey != null)
+                {
+                    baseKeys.Add(baseKey);
+
+                    switch (baseKey.GetKeyType())
+                    {
+                        case KeyType.Spawner:
+                            playerSpawnPosition = grandChild.position;
+                            break;
+                        case KeyType.Teleport:
+                            teleportKeys.Add(baseKey);
+                            break;
+                        case KeyType.None:
+                            noneKeys.Add(baseKey);
+                            break;
+                        default:
+                            break;
+                    }
+                }
+            }
+        }
+
+        foreach (BaseKey teleportKey in teleportKeys)
+        {
+            int randomIndex = Random.Range(0, noneKeys.Count);
+            Vector2 randomNonePosition = noneKeys[randomIndex].transform.position;
+            teleportKey.SetTeleportPosition(randomNonePosition);
+        }
+    }
+
     private void Start()
     {
         gameLevel = GameManager.Instance.GetgameLevel();
@@ -23,7 +67,7 @@ public class KeyBoardManager : MonoBehaviour
         string setOfKeys = CreateSetOfKeys();
         foreach(Transform rows in transform)
         {
-            foreach (Transform key in rows) 
+            foreach (Transform key in rows)
             {
                 int chosedIndex = Random.Range(0, setOfKeys.Length);
 
@@ -41,7 +85,7 @@ public class KeyBoardManager : MonoBehaviour
         }
     }
 
-    private string CreateSetOfKeys() 
+    private string CreateSetOfKeys()
     {
         string setOfKeys = keys;   
         for (int i = setOfKeys.Length - 1; i > 0 ; i--) 
@@ -53,5 +97,13 @@ public class KeyBoardManager : MonoBehaviour
         }
 
         return setOfKeys;
+    }
+
+    public void ResetKeyPositions()
+    {
+        foreach (BaseKey key in baseKeys)
+        {
+            key.ResetPosition();
+        }
     }
 }
