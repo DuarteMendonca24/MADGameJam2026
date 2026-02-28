@@ -3,13 +3,11 @@ using TMPro;
 using UnityEngine;
 
 public class LettersOrderManager : MonoBehaviour
-{   
-    [SerializeField]
-    // The final words the player wants to find
-    List<string> finalWords = new List<string>();
+{
 
-    [SerializeField]
-    TextMeshProUGUI displayText;
+    // The final words the player wants to find
+    [SerializeField] List<string> finalWords = new List<string>();
+    [SerializeField] TextMeshProUGUI displayText;
 
     // Final words mapped by each level
     Dictionary<int, string> wordsByLevel = new Dictionary<int, string>();
