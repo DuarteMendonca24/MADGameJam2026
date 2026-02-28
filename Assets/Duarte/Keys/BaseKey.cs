@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Collections;
 using TMPro;
 using UnityEngine;
@@ -28,25 +29,33 @@ public class BaseKey : MonoBehaviour
     [SerializeField] float fallingDownSpeed;
     [SerializeField] float fallingDownDuration;
 
-    Collider2D collider;
-    int playerLayerValue;
+    [Header("Key Range Configurations")]
+    [SerializeField] List<Vector2> raycastDirections;
+    [SerializeField] float raycastDistance;
+
+
+    private Collider2D collider;
+    private int playerLayerIndex;
 
     private void Awake()
     {
         collider = GetComponent<Collider2D>();
-        playerLayerValue = LayerMask.NameToLayer(playerLayerName);
+        playerLayerIndex = LayerMask.NameToLayer(playerLayerName);
+
+        transform.GetChild(0).GetComponent<Canvas>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder;
     }
 
-    private void Start()
+    private void FixedUpdate()
     {
-        //transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = keyID;
+        if (keyType == KeyType.Range) { EmitRaycasts(); }
     }
+
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
         if (keyType == KeyType.None || keyType == KeyType.Spawner) return;
 
-        if (collision.gameObject.layer == playerLayerValue)
+        if (collision.gameObject.layer == playerLayerIndex)
         {
             switch (keyType)
             {
@@ -54,6 +63,8 @@ public class BaseKey : MonoBehaviour
                     ImpulsePlayer(collision.gameObject);
                     break;
                 case KeyType.Hole:
+                    Movement playerMovement = collision.gameObject.GetComponent<Movement>();
+                    playerMovement.FallDown(100, GetComponent<SpriteRenderer>().sortingOrder);
                     StartCoroutine(FallDown());
                     break;
                 case KeyType.Range:
@@ -65,9 +76,7 @@ public class BaseKey : MonoBehaviour
 
     private void ImpulsePlayer(GameObject player)
     {
-        print("Impulse");
         Movement playerMovement = player.GetComponent<Movement>();
-
         playerMovement.AddExternalForce(new Vector2(0, 30));
     }
 
@@ -86,6 +95,23 @@ public class BaseKey : MonoBehaviour
         }
     }
 
+    private void EmitRaycasts()
+    {
+        foreach (Vector2 direction in raycastDirections)
+        {
+
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, raycastDistance, 1 << playerLayerIndex);
+            Debug.DrawLine(transform.position, transform.position + (Vector3)(direction * raycastDistance), Color.red, 1.0f);
+
+            if (hit)
+            {
+                print("Player Hit by Raycast");
+            }
+
+           
+
+        }
+    }
     public string GetKeyID() { return keyID; }
     public void SetKeyID(string keyID) { this.keyID = keyID; }
 }
