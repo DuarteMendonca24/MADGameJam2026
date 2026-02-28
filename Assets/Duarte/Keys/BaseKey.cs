@@ -84,6 +84,7 @@ public class BaseKey : MonoBehaviour
                     break;
                 case KeyType.Range:
                     playerMovement.Die();
+                    break;
                 case KeyType.Explode:
                     break;
                 case KeyType.Teleport:

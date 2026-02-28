@@ -14,6 +14,9 @@ public class KeyBoardManager : MonoBehaviour
 
     private List<BaseKey> baseKeys = new List<BaseKey>();
 
+    private List<BaseKey> teleportKeys = new List<BaseKey>();
+    private List<BaseKey> noneKeys = new List<BaseKey>();
+
     public Vector2 playerSpawnPosition = new Vector2();
 
     private void Awake()
