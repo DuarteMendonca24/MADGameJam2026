@@ -13,7 +13,7 @@ public class LettersOrderManager : MonoBehaviour
     Dictionary<int, string> wordsByLevel = new Dictionary<int, string>();
 
 
-    void Start()
+    void Awake()
     {
         for (int i = 0; i < finalWords.Count; i++)
         {
@@ -37,4 +37,6 @@ public class LettersOrderManager : MonoBehaviour
             print("Word completed");
         }
     }
+
+    public List<string> GetWordsByLevel() { return finalWords; }
 }

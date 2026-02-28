@@ -153,7 +153,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseKey
   playerLayerName: Player
-  keyID: A
+  keyID: 
   keyType: 0
   fallingDownSpeed: 10
   fallingDownDuration: 10

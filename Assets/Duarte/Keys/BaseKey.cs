@@ -9,6 +9,8 @@ enum KeyType
     Explode,
     Hole,
     Range,
+    Throw,
+    TP,
     Spawner
 }
 
@@ -110,4 +112,6 @@ public class BaseKey : MonoBehaviour
 
         }
     }
+    public string GetKeyID() { return keyID; }
+    public void SetKeyID(string keyID) { this.keyID = keyID; }
 }
