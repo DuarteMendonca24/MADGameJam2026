@@ -3,7 +3,7 @@ using System.Collections;
 using TMPro;
 using UnityEngine;
 
-enum KeyType
+public enum KeyType
 {
     None,
     Explode,
@@ -17,6 +17,7 @@ enum KeyType
 [RequireComponent(typeof(Collider2D))]
 public class BaseKey : MonoBehaviour
 {
+    
     // The player layer to check to detect collisions
     [SerializeField] string playerLayerName;
 
@@ -38,7 +39,7 @@ public class BaseKey : MonoBehaviour
 
     private Collider2D collider;
     private int playerLayerIndex;
-    
+
     private Vector2 keyInitialPosition;
 
 
@@ -161,6 +162,8 @@ public class BaseKey : MonoBehaviour
 
     public string GetKeyID() { return keyID; }
     public void SetKeyID(string keyID) { this.keyID = keyID; }
+
+    public KeyType GetKeyType() { return keyType; }
 
     public void ResetPosition()
     {

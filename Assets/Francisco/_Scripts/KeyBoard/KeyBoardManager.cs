@@ -14,6 +14,8 @@ public class KeyBoardManager : MonoBehaviour
 
     private List<BaseKey> baseKeys = new List<BaseKey>();
 
+    public Vector2 playerSpawnPosition = new Vector2();
+
     private void Awake()
     {
         foreach (Transform child in transform)
@@ -24,6 +26,11 @@ public class KeyBoardManager : MonoBehaviour
                 if (baseKey != null)
                 {
                     baseKeys.Add(baseKey);
+
+                    if (baseKey.GetKeyType() == KeyType.Spawner)
+                    {
+                        playerSpawnPosition = grandChild.position;
+                    }
                 }
             }
         }
