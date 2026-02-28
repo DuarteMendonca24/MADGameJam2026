@@ -1,3 +1,4 @@
+using TMPro;
 using UnityEngine;
 
 enum KeyType
@@ -25,6 +26,11 @@ public class BaseKey : MonoBehaviour
     private void Awake()
     {
         collider = GetComponent<Collider2D>();
+    }
+
+    private void Start()
+    {
+        transform.GetChild(0).transform.GetChild(0).GetComponent<TextMeshProUGUI>().text = keyID;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)
