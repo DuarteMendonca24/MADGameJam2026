@@ -8,6 +8,9 @@ public class Movement : MonoBehaviour
     public delegate void LetterGoalReached();
     public LetterGoalReached letterGoalReached;
 
+    public delegate void PlayerDied();
+    public PlayerDied playerDied;
+
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     
@@ -18,13 +21,16 @@ public class Movement : MonoBehaviour
     private SpriteRenderer spriteRenderer;
 
     private bool blockMovement = false;
-    private bool isDead = false;
+    public bool isDead = false;
+
+    private int originalSortingOrder;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
         spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        originalSortingOrder = spriteRenderer.sortingOrder;
     }
 
     void Update()
@@ -72,6 +78,7 @@ public class Movement : MonoBehaviour
     public void Die()
     {
         isDead = true;
+        playerDied?.Invoke();
     }
 
     // Applies gravity and correct sorting order to fall down due
@@ -82,6 +89,14 @@ public class Movement : MonoBehaviour
         spriteRenderer.sortingOrder = orderingLayer;
         collider.enabled = false;
         blockMovement = true;
+    }
+
+    public void StopFallDown()
+    {
+        rb.gravityScale = 0.0f;
+        spriteRenderer.sortingOrder = originalSortingOrder;
+        collider.enabled = true;
+        blockMovement = false;
     }
 
     public void Teleport(Vector2 finalPos)
@@ -99,5 +114,11 @@ public class Movement : MonoBehaviour
     {
         letterGoalReached?.Invoke();
         print("Word invoke");
+    }
+
+    public void Respawn()
+    {
+        isDead = false;
+        rb.linearVelocity = Vector2.zero;
     }
 }

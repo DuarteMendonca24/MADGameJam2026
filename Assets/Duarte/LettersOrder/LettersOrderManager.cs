@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class LettersOrderManager : MonoBehaviour
 {
+    public delegate void WordCompleted();
+    public WordCompleted wordCompleted;
 
     // The final words the player wants to find
     [SerializeField] List<string> finalWords = new List<string>();
@@ -30,15 +32,16 @@ public class LettersOrderManager : MonoBehaviour
     // Removes the character from the string to prevent displaying it again
     public void ShowRandomLetter(int level)
     {
+        if (wordsByLevel[level] == "")
+        {
+            wordCompleted?.Invoke();
+            return;
+        }
         int randomIndex = Random.Range(0, wordsByLevel[level].Length);
         displayText.text = wordsByLevel[level][randomIndex].ToString();
         wordsByLevel[level] = wordsByLevel[level].Remove(randomIndex, 1);
 
-        if (wordsByLevel[level] == "")
-        {
-            // TODO: Apply logic or event or variable to notify
-            print("Word completed");
-        }
+        
     }
 
     public List<string> GetWordsByLevel() { return finalWords; }

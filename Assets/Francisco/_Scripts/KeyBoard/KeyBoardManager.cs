@@ -65,7 +65,6 @@ public class KeyBoardManager : MonoBehaviour
     private void SetRandomKeys()
     {
         string setOfKeys = CreateSetOfKeys();
-        Debug.Log(setOfKeys.Length);
         foreach (Transform rows in transform)
         {
             foreach (Transform key in rows)
@@ -82,8 +81,6 @@ public class KeyBoardManager : MonoBehaviour
 
                 else { key.GetChild(0).Find("Text (TMP)").gameObject.GetComponent<TextMeshProUGUI>().text = key.gameObject.GetComponent<BaseKey>().GetKeyID(); }
 
-
-                Debug.Log(setOfKeys);
             }
         }
     }

@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 
     private int currentGameLevel = 1;
 
- 
+
 
     private void Awake()
     {
@@ -45,34 +45,40 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
-            player.GetComponent<Movement>().letterGoalReached += OnPlayerReachedLetter;
-            //transitionController = transition.GetComponent<TransitionController>();
 
-            SetGameLevel(1);
-            StartLevel();
-            State = GameState.InGame;
+            Movement playerMovement = player.GetComponent<Movement>();
+            playerMovement.letterGoalReached += OnPlayerReachedLetter;
+            playerMovement.playerDied += OnPlayerDeath;
+            
+            transitionController = transition.GetComponent<TransitionController>();
 
             lettersOrderManager.Initialize();
+            lettersOrderManager.wordCompleted += OnLevelCompleted;
+
+            SetGameLevel(1);
+            State = GameState.InGame;
 
             GetKeyboardManagers();
             PopulateGoalKey();
+
+            StartLevel();
         }
         else
         {
             Destroy(gameObject);
         }
 
-        
 
-        
+
+
     }
 
     private void GetKeyboardManagers()
     {
-        for(int i = 0; i < levels.Length; i++)
+        for (int i = 0; i < levels.Length; i++)
         {
             KeyBoardManager kbm = keyboardsParent.transform.GetChild(i).GetComponent<KeyBoardManager>();
-            keyBoardManagers.Add(i+1,kbm);
+            keyBoardManagers.Add(i + 1, kbm);
         }
     }
 
@@ -105,7 +111,7 @@ public class GameManager : MonoBehaviour
 
     public void OnPlayerDeath()
     {
-        StartCoroutine(PlayerDeathTransition());
+        PlayerDeathTransition();
     }
 
     private void PopulateGoalKey()
@@ -119,37 +125,31 @@ public class GameManager : MonoBehaviour
         PopulateGoalKey();
     }
 
-    public IEnumerator PlayerDeathTransition()
-    {
-        transitionController.PlayTransitionOutAnimation();
+    public void PlayerDeathTransition()
+    {   
+        // Por favor corrigir, obrigado
+        //StartCoroutine(transitionController.PlayFullTransition());
         ResetLevel();
-        yield return new WaitForSeconds(2f);
-        transitionController.PlayTransitionInAnimation();
     }
 
     //Put everything back in place
     private void ResetLevel()
     {
         keyBoardManagers[currentGameLevel].ResetKeyPositions();
+        player.GetComponent<Movement>().StopFallDown();
         player.transform.position = keyBoardManagers[currentGameLevel].playerSpawnPosition;
+        player.GetComponent<Movement>().Respawn();
     }
 
     public void OnLevelCompleted()
     {
-        //enquanto fôr um nível "normal"
-        if (currentGameLevel < 4)
-        {
-            SetGameLevel(currentGameLevel + 1);
-            StartCoroutine(TransitionIntoNextLevel());
-        }
-        else
-        {
-            // se fôr o último nível
-        }
+        SetGameLevel(currentGameLevel + 1);
+        StartCoroutine(TransitionIntoNextLevel());
     }
 
     private IEnumerator TransitionIntoNextLevel()
     {
+        transition.SetActive(true);
         transitionController.PlayTransitionOutAnimation();
         yield return new WaitForSeconds(1f);
         //MOSTRAR BD???
@@ -160,8 +160,12 @@ public class GameManager : MonoBehaviour
         //transitionController.PlayTransitionOutAnimation();
 
         StartLevel();
-        yield return new WaitForSeconds(1f);
         transitionController.PlayTransitionInAnimation();
+        yield return new WaitForSeconds(1f);
+        transition.SetActive(false);
+
+        lettersOrderManager.ShowRandomLetter(currentGameLevel);
+        PopulateGoalKey();
     }
 
     private void StartLevel()
@@ -170,6 +174,7 @@ public class GameManager : MonoBehaviour
         {
             if (level.name.Contains(currentGameLevel.ToString()))
             {
+                player.transform.position = keyBoardManagers[currentGameLevel].playerSpawnPosition;
                 level.SetActive(true);
             }
             else

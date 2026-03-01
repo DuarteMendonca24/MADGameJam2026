@@ -69,6 +69,8 @@ public class BaseKey : MonoBehaviour
             return;
         }
 
+        if (keyType == KeyType.Goal) { StartCoroutine(LerpKeyPosition(true)); }
+
         if (collision.gameObject.layer == playerLayerIndex)
         {
             Movement playerMovement = collision.gameObject.GetComponent<Movement>();
@@ -80,13 +82,14 @@ public class BaseKey : MonoBehaviour
                     break;
                 case KeyType.Hole:
                     playerMovement.FallDown(100, GetComponent<SpriteRenderer>().sortingOrder);
-                    playerMovement.Die();
+                    StartCoroutine(PlayerDeathDelay(playerMovement));
                     StartCoroutine(FallDown());
                     break;
                 case KeyType.Range:
                     playerMovement.Die();
                     break;
                 case KeyType.Explode:
+                    playerMovement.Die();
                     break;
                 case KeyType.Teleport:
                     playerMovement.Teleport(teleportPosition);
@@ -128,6 +131,12 @@ public class BaseKey : MonoBehaviour
 
             yield return null; // wait one frame
         }
+    }
+
+    private IEnumerator PlayerDeathDelay(Movement playerMovement)
+    {
+        yield return new WaitForSeconds(1.0f);
+        playerMovement.Die();
     }
 
     private void EmitRaycasts()

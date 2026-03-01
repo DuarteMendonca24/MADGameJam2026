@@ -193,6 +193,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyBoardManager
   lettersOrderManager: {fileID: 0}
+  playerSpawnPosition: {x: 0, y: 0}
 --- !u!1 &1284493102367039247
 GameObject:
   m_ObjectHideFlags: 0
@@ -1010,6 +1011,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyBoardManager
   lettersOrderManager: {fileID: 0}
+  playerSpawnPosition: {x: 0, y: 0}
 --- !u!1 &7751354019279231596
 GameObject:
   m_ObjectHideFlags: 0
@@ -1119,6 +1121,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyBoardManager
   lettersOrderManager: {fileID: 0}
+  playerSpawnPosition: {x: 0, y: 0}
 --- !u!1 &8287167468300473050
 GameObject:
   m_ObjectHideFlags: 0
@@ -1270,6 +1273,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyBoardManager
   lettersOrderManager: {fileID: 0}
+  playerSpawnPosition: {x: 0, y: 0}
 --- !u!1 &9048511571886881007
 GameObject:
   m_ObjectHideFlags: 0
@@ -1421,6 +1425,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::KeyBoardManager
   lettersOrderManager: {fileID: 0}
+  playerSpawnPosition: {x: 0, y: 0}
 --- !u!1001 &55417405402653083
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17211,7 +17216,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7891112924248649338, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: keyType
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 9131564738226680925, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
