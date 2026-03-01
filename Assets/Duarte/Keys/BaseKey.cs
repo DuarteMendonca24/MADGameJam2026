@@ -40,12 +40,17 @@ public class BaseKey : MonoBehaviour
     [SerializeField] List<Vector2> raycastDirections;
     [SerializeField] float raycastDistance;
 
+    [Header("Key Throw Configurations")]
+    [SerializeField] float throwForce;
+
     private Collider2D collider;
     private int playerLayerIndex;
 
     private Vector2 keyInitialPosition;
 
     private Vector2 teleportPosition;
+
+    private Animator animator;
 
     //Audio
 
@@ -55,11 +60,20 @@ public class BaseKey : MonoBehaviour
     private void Awake()
     {
         collider = GetComponent<Collider2D>();
+        animator = transform.GetChild(1).GetComponent<Animator>();
         playerLayerIndex = LayerMask.NameToLayer(playerLayerName);
 
         transform.GetChild(0).GetComponent<Canvas>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder;
 
         keyInitialPosition = transform.position;
+
+        if (keyType == KeyType.Throw)
+        {
+            keyLerpTargetIncrement = 0.6f;
+            keyLerpDuration = 0.15f;
+        }
+
+        animator.gameObject.GetComponent<SpriteRenderer>().sortingOrder = GetComponent<SpriteRenderer>().sortingOrder + 1;
     }
 
     private void FixedUpdate()
@@ -80,7 +94,8 @@ public class BaseKey : MonoBehaviour
             return;
         }
 
-        if (keyType == KeyType.Goal) { StartCoroutine(LerpKeyPosition(true)); }
+        if (keyType == KeyType.Goal || keyType == KeyType.Throw) { 
+            StartCoroutine(LerpKeyPosition(true)); }
 
         if (collision.gameObject.layer == playerLayerIndex)
         {
@@ -100,6 +115,10 @@ public class BaseKey : MonoBehaviour
                     playerMovement.Die();
                     break;
                 case KeyType.Explode:
+                    gameObject.GetComponent<SpriteRenderer>().enabled = false;
+                    transform.GetChild(0).gameObject.SetActive(false);
+                    transform.GetChild(1).gameObject.SetActive(true);
+                    animator.SetTrigger("Explosion");
                     SoundFXManager.Instance.PlaySoundFXClip(bombSound, transform, 1f);
                     playerMovement.Die();
                     break;
@@ -115,9 +134,10 @@ public class BaseKey : MonoBehaviour
         }
     }
 
+ 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        if (keyType == KeyType.None || keyType == KeyType.Spawner)
+        if (keyType == KeyType.None || keyType == KeyType.Spawner || keyType == KeyType.Throw)
         {
             StartCoroutine(LerpKeyPosition(false));
         }
@@ -127,7 +147,7 @@ public class BaseKey : MonoBehaviour
     private void ImpulsePlayer(GameObject player)
     {
         Movement playerMovement = player.GetComponent<Movement>();
-        playerMovement.AddExternalForce(new Vector2(0, 30));
+        playerMovement.AddExternalForce(new Vector2(0, throwForce));
     }
 
 
@@ -183,7 +203,12 @@ public class BaseKey : MonoBehaviour
         if (isPressed)
         {
             targetPosition = new Vector2(startPosition.x, startPosition.y + keyLerpTargetIncrement);
-            SoundFXManager.Instance.PlaySoundFXClip(clickSound, transform, 1f);
+            
+            if (keyType != KeyType.Throw)
+            {
+               SoundFXManager.Instance.PlaySoundFXClip(clickSound, transform, 1f);
+            }
+            
         }
         else
         {

@@ -125,8 +125,7 @@ public class GameManager : MonoBehaviour
 
     private void OnPlayerReachedLetter()
     {
-        //currentGameLevel = 5;
-        if (currentGameLevel == 1)
+        if (currentGameLevel == 5)
         {
             StartCoroutine(lettersOrderManager.ShowFinalMessage());
         }
