@@ -6,7 +6,7 @@ public class TransitionController : MonoBehaviour
     public Animator animator;
 
     public IEnumerator PlayTransitionInAnimation()
-    { 
+    {
         animator.SetTrigger("TransitionIn");
         yield return new WaitForSeconds(2f);
     }
@@ -21,8 +21,8 @@ public class TransitionController : MonoBehaviour
     {
         gameObject.SetActive(true);
 
-        yield return PlayTransitionOutAnimation();
         yield return PlayTransitionInAnimation();
+        yield return PlayTransitionOutAnimation();
 
         gameObject.SetActive(false);
     }

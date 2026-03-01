@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] levels;
     public GameObject transition;
     public GameObject keyboardsParent;
-    //private TransitionController transitionController;
+    private TransitionController transitionController;
     private Dictionary<int, KeyBoardManager> keyBoardManagers = new Dictionary<int, KeyBoardManager>();
 
     public GameObject player;
@@ -53,7 +53,7 @@ public class GameManager : MonoBehaviour
             playerMovement.letterGoalReached += OnPlayerReachedLetter;
             playerMovement.playerDied += OnPlayerDeath;
             
-            //transitionController = transition.GetComponent<TransitionController>();
+            transitionController = transition.GetComponent<TransitionController>();
 
             lettersOrderManager.Initialize();
             lettersOrderManager.wordCompleted += OnLevelCompleted;
@@ -132,8 +132,7 @@ public class GameManager : MonoBehaviour
 
     public void PlayerDeathTransition()
     {   
-        // Por favor corrigir, obrigado
-        //StartCoroutine(transitionController.PlayFullTransition());
+        StartCoroutine(transitionController.PlayFullTransition());
         ResetLevel();
         PopulateGoalKey();
     }
@@ -156,20 +155,9 @@ public class GameManager : MonoBehaviour
 
     private void TransitionIntoNextLevel()
     {
-        //transition.SetActive(true);
-        //transitionController.PlayTransitionOutAnimation();
-        //yield return new WaitForSeconds(1f);
-        //MOSTRAR BD???
-        //bd.setActive(true)
-        //transitionController.PlayTransitionInAnimation();
-        //yield return new WaitForSeconds(10f);
-        //bd.setActive(false)
-        //transitionController.PlayTransitionOutAnimation();
+        StartCoroutine(transitionController.PlayFullTransition());
 
         StartLevel();
-        // transitionController.PlayTransitionInAnimation();
-        // yield return new WaitForSeconds(1f);
-        // transition.SetActive(false);
 
         lettersOrderManager.ShowRandomLetter(currentGameLevel);
         PopulateGoalKey();
