@@ -1,3 +1,4 @@
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using TMPro;
@@ -12,18 +13,24 @@ public class LettersOrderManager : MonoBehaviour
     // The final words the player wants to find
     [SerializeField] List<string> finalWords = new List<string>();
     [SerializeField] TextMeshProUGUI displayText;
+    [SerializeField] TextMeshProUGUI finalTextOrdered;
+    [SerializeField] TextMeshProUGUI finalTextShuffle;
 
     [SerializeField] Dictionary<int, WordDisplay> wordDisplays = new Dictionary<int, WordDisplay>();
 
 
     public void Initialize()
     {
-        print("Initialize?");
         for (int i = 0; i < finalWords.Count; i++)
         {
             string shuffled = StringUtils.Shuffle(finalWords[i]);
             wordDisplays.Add(i + 1, new WordDisplay(shuffled, 0));
+            
+            finalTextShuffle.text = finalTextShuffle.text + shuffled;
+            finalTextOrdered.text = finalTextOrdered.text + finalWords[i] + " ";
+           
             print("Shuffled string" + shuffled);
+            print("Ordered string" + finalWords[i]);
         }
 
         ShowRandomLetter(1);
@@ -44,6 +51,51 @@ public class LettersOrderManager : MonoBehaviour
 
         displayText.text = wordDisplay.word[wordDisplay.characterIndex].ToString();
         wordDisplay.characterIndex++;
+    }
+
+
+    public IEnumerator ShowFinalMessage()
+    {
+        displayText.gameObject.SetActive(false);
+        finalTextShuffle.gameObject.SetActive(true);
+        yield return new WaitForSeconds(2.0f);
+        finalTextShuffle.gameObject.SetActive(false);
+        finalTextOrdered.gameObject.SetActive(true);
+        yield return StartCoroutine(ChangeTextColor());
+        StartCoroutine(ChangeTextSize());
+    }
+
+
+    private IEnumerator ChangeTextColor()
+    {
+        float tick = 0f;
+        ColorUtility.TryParseHtmlString("#630000", out Color endColor);
+        Color startColor = finalTextOrdered.color;
+        while (finalTextOrdered.color != endColor)
+        {
+            tick += Time.deltaTime * 0.5f;
+            finalTextOrdered.color = Color.Lerp(startColor, endColor, tick);
+            yield return null;
+        }
+    }
+
+    private IEnumerator ChangeTextSize()
+    {
+        float minSize = 24f;
+        float maxSize = 29f;
+        float speed = 2f; // animation speed
+
+        float time = 0f;
+
+        while (true)
+        {
+            time += Time.deltaTime * speed;
+
+            float t = Mathf.PingPong(time, 1f);
+            finalTextOrdered.fontSize = Mathf.Lerp(minSize, maxSize, t);
+
+            yield return null;
+        }
     }
 
     public List<string> GetWordsByLevel() { return finalWords; }

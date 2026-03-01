@@ -125,6 +125,11 @@ public class GameManager : MonoBehaviour
 
     private void OnPlayerReachedLetter()
     {
+        //currentGameLevel = 5;
+        if (currentGameLevel == 1)
+        {
+            StartCoroutine(lettersOrderManager.ShowFinalMessage());
+        }
         lettersOrderManager.ShowRandomLetter(currentGameLevel);
         PopulateGoalKey();
     }
