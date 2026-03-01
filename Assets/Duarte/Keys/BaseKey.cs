@@ -20,7 +20,7 @@ public class BaseKey : MonoBehaviour
 {
 
     [SerializeField] GameObject blade;
-    private bool bladeExpeled = false;
+    [SerializeField] private bool bladeExpeled = false;
 
     // The player layer to check to detect collisions
     [SerializeField] string playerLayerName;
@@ -60,7 +60,11 @@ public class BaseKey : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (keyType == KeyType.Range && !bladeExpeled) { EmitRaycasts(); }
+        if (keyType == KeyType.Range && !bladeExpeled)
+        {
+            Debug.Log("raycasting");
+            EmitRaycasts();
+        }
     }
 
 
@@ -81,7 +85,7 @@ public class BaseKey : MonoBehaviour
             {
                 case KeyType.Throw:
                     ImpulsePlayer(collision.gameObject);
-                    playerMovement.Die();
+                    StartCoroutine(PlayerDeathDelay(playerMovement));
                     break;
                 case KeyType.Hole:
                     playerMovement.FallDown(100, GetComponent<SpriteRenderer>().sortingOrder);
@@ -154,9 +158,9 @@ public class BaseKey : MonoBehaviour
             {
                 bladeExpeled = true;
                 GameObject go = Instantiate(blade, transform);
-                go.AddComponent<Rigidbody2D>().gravityScale = 0;
+                go.GetComponent<Rigidbody2D>().gravityScale = 0;
                 go.GetComponent<Rigidbody2D>().AddForce(direction * 1000, ForceMode2D.Force);
-                this.enabled = false;
+                //this.enabled = false;
                 print("Player Hit by Raycast");
                 Debug.Log(direction);
             }
@@ -200,6 +204,7 @@ public class BaseKey : MonoBehaviour
     public void ResetPosition()
     {
         transform.position = keyInitialPosition;
+
         bladeExpeled = false;
     }
 }

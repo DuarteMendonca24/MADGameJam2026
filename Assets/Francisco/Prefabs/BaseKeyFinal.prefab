@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255ed8628e5d3da4aa24abb8413698b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseKey
+  blade: {fileID: 2295816932511228133, guid: aa9dcea643219b34d8d5b7144a61d59f, type: 3}
   playerLayerName: Player
   keyID: 
   keyType: 0
