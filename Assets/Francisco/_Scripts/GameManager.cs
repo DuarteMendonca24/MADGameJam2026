@@ -70,10 +70,7 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-    }
 
-    private void Start()
-    {
         SoundManager.Instance.PlaySoundClip(BackgroundSound, transform, 1f);
     }
 
@@ -125,6 +122,10 @@ public class GameManager : MonoBehaviour
 
     private void OnPlayerReachedLetter()
     {
+        if (currentGameLevel == 5)
+        {
+            return;
+        }
         lettersOrderManager.ShowRandomLetter(currentGameLevel);
         PopulateGoalKey();
     }

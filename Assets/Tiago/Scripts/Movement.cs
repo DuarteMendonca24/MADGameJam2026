@@ -25,7 +25,7 @@ public class Movement : MonoBehaviour
     private bool blockMovement = false;
 
     private int originalSortingOrder;
-    private bool animating = false;
+    public bool animating = false, inFinalBattle = false;
 
     void Awake()
     {
@@ -38,71 +38,75 @@ public class Movement : MonoBehaviour
 
     void Update()
     {
-        movement.x = 0;
-        movement.y = 0;
-
-        if (blockMovement ) { return; }
-
-        if (Input.GetKey(KeyCode.D))
+        if (!inFinalBattle) 
         {
-            movement.x = 1;
-            if (!animating)
+            movement.x = 0;
+            movement.y = 0;
+
+            if (blockMovement) { return; }
+
+            if (Input.GetKey(KeyCode.D))
             {
-                animator.SetTrigger("Andar_Direita");
-                animating = true;
+                movement.x = 1;
+                if (!animating)
+                {
+                    animator.SetTrigger("Andar_Direita");
+                    animating = true;
+                }
+            }
+            else if (Input.GetKeyUp(KeyCode.D))
+            {
+                animator.SetTrigger("Idle_Direita");
+                animating = false;
+            }
+
+            else if (Input.GetKey(KeyCode.A))
+            {
+                movement.x = -1;
+                if (!animating)
+                {
+                    animator.SetTrigger("Andar_Esquerda");
+                    animating = true;
+                }
+
+            }
+            else if (Input.GetKeyUp(KeyCode.A))
+            {
+                animator.SetTrigger("Idle_Esquerda");
+                animating = false;
+            }
+
+            else if (Input.GetKey(KeyCode.S))
+            {
+                movement.y = -1;
+                if (!animating)
+                {
+                    animator.SetTrigger("Andar_Frente");
+                    animating = true;
+                }
+            }
+            else if (Input.GetKeyUp(KeyCode.S))
+            {
+                animator.SetTrigger("Idle_Frente");
+                animating = false;
+            }
+
+            else if (Input.GetKey(KeyCode.W))
+            {
+                movement.y = 1;
+                if (!animating)
+                {
+                    animator.SetTrigger("Andar_Costas");
+                    animating = true;
+                }
+            }
+            else if (Input.GetKeyUp(KeyCode.W))
+            {
+                animator.SetTrigger("Idle_Costas");
+                animating = false;
             }
         }
-        else if (Input.GetKeyUp(KeyCode.D))
-        {
-            animator.SetTrigger("Idle_Direita");
-            animating = false;
-        }
-
-        else if (Input.GetKey(KeyCode.A))
-        {
-            movement.x = -1;
-            if (!animating)
-            {
-                animator.SetTrigger("Andar_Esquerda");
-                animating = true;
-            }
-            
-        }
-        else if (Input.GetKeyUp(KeyCode.A))
-        {
-            animator.SetTrigger("Idle_Esquerda");
-            animating = false;
-        }
-
-        else if (Input.GetKey(KeyCode.S))
-        {
-            movement.y = -1;
-            if (!animating)
-            {
-                animator.SetTrigger("Andar_Frente");
-                animating = true;
-            }
-        }
-        else if (Input.GetKeyUp(KeyCode.S))
-        {
-            animator.SetTrigger("Idle_Frente");
-            animating = false;
-        }
-
-        else if (Input.GetKey(KeyCode.W))
-        {
-            movement.y = 1;
-            if (!animating)
-            {
-                animator.SetTrigger("Andar_Costas");
-                animating = true;
-            }
-        }
-        else if (Input.GetKeyUp(KeyCode.W))
-        {
-            animator.SetTrigger("Idle_Costas");
-            animating = false;
-        }
+        
     }
 
     void FixedUpdate()
