@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public delegate void LetterGoalReached();
+    public LetterGoalReached letterGoalReached;
+
+    public delegate void PlayerDied();
+    public PlayerDied playerDied;
+
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     
@@ -17,14 +23,17 @@ public class Movement : MonoBehaviour
 
 
     private bool blockMovement = false;
+    public bool isDead = false;
+
+    private int originalSortingOrder;
     private bool animating = false;
-    private int lastAxis = 0;
 
     void Awake()
     {
         rb = GetComponent<Rigidbody2D>();
         collider = GetComponent<BoxCollider2D>();
         spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
+        originalSortingOrder = spriteRenderer.sortingOrder;
         animator = transform.GetChild(0).GetComponent<Animator>();
     }
 
@@ -34,6 +43,7 @@ public class Movement : MonoBehaviour
         movement.y = 0;
 
         if (blockMovement ) { return; }
+        if (isDead) {  return; }
 
         if (Input.GetKey(KeyCode.D))
         {
@@ -113,6 +123,11 @@ public class Movement : MonoBehaviour
         externalForce = force;
     }
 
+    public void Die()
+    {
+        isDead = true;
+        playerDied?.Invoke();
+    }
 
     // Applies gravity and correct sorting order to fall down due
     // to a Hole key
@@ -124,6 +139,14 @@ public class Movement : MonoBehaviour
         blockMovement = true;
     }
 
+    public void StopFallDown()
+    {
+        rb.gravityScale = 0.0f;
+        spriteRenderer.sortingOrder = originalSortingOrder;
+        collider.enabled = true;
+        blockMovement = false;
+    }
+
     public void Teleport(Vector2 finalPos)
     {
         Color color = spriteRenderer.color;
@@ -133,5 +156,17 @@ public class Movement : MonoBehaviour
         color.a = 1.0f;
         spriteRenderer.color = color;
 
+    }
+
+    public void InvokeGoalReached()
+    {
+        letterGoalReached?.Invoke();
+        print("Word invoke");
+    }
+
+    public void Respawn()
+    {
+        isDead = false;
+        rb.linearVelocity = Vector2.zero;
     }
 }

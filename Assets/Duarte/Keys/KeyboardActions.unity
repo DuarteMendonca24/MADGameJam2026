@@ -1390,6 +1390,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1440653030150419254, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
   m_PrefabInstance: {fileID: 441325034}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &443347005 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9089817021170039794, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+  m_PrefabInstance: {fileID: 7679001292800483717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &447405147
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1611,7 +1616,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &522477685
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1888,7 +1893,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7891112924248649338, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: keyType
-      value: 0
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 9131564738226680925, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
@@ -2903,6 +2908,11 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 373}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!1 &985593588 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751354019279231596, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+  m_PrefabInstance: {fileID: 7679001292800483717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1041848780
 GameObject:
   m_ObjectHideFlags: 0
@@ -4328,6 +4338,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1440653030150419254, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
   m_PrefabInstance: {fileID: 1509012555}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1548831771 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8359626363640949811, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+  m_PrefabInstance: {fileID: 7679001292800483717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1597279058
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4846,6 +4861,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1440653030150419254, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
   m_PrefabInstance: {fileID: 1814099693}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1882175424 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7620997443892718697, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+  m_PrefabInstance: {fileID: 7679001292800483717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1886712320
 GameObject:
   m_ObjectHideFlags: 0
@@ -5187,6 +5207,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1440653030150419254, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
   m_PrefabInstance: {fileID: 1958833549}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1988161256 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1058310697154114840, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+  m_PrefabInstance: {fileID: 7679001292800483717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2003423312
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5319,7 +5344,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dc549204887b60b4884295eafc7ef162, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::GameManager
+  levels:
+  - {fileID: 443347005}
+  - {fileID: 1988161256}
+  - {fileID: 1548831771}
+  - {fileID: 1882175424}
+  - {fileID: 985593588}
+  transition: {fileID: 0}
+  keyboardsParent: {fileID: 7679001292800483718}
+  player: {fileID: 1041848780}
   State: 0
+  lettersOrderManager: {fileID: 2058070812}
 --- !u!4 &2058070811
 Transform:
   m_ObjectHideFlags: 0
@@ -5703,7 +5738,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5244362598805515321, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5246552077892159274, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
       propertyPath: lettersOrderManager
@@ -5717,11 +5752,20 @@ PrefabInstance:
       propertyPath: lettersOrderManager
       value: 
       objectReference: {fileID: 2058070812}
+    - target: {fileID: 7292677265146028349, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: keyType
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+--- !u!1 &7679001292800483718 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5244362598805515321, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+  m_PrefabInstance: {fileID: 7679001292800483717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

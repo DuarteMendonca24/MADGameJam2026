@@ -11,7 +11,8 @@ public enum KeyType
     Range,
     Throw,
     Teleport,
-    Spawner
+    Spawner,
+    Goal
 }
 
 [RequireComponent(typeof(Collider2D))]
@@ -71,6 +72,8 @@ public class BaseKey : MonoBehaviour
             return;
         }
 
+        if (keyType == KeyType.Goal) { StartCoroutine(LerpKeyPosition(true)); }
+
         if (collision.gameObject.layer == playerLayerIndex)
         {
             Movement playerMovement = collision.gameObject.GetComponent<Movement>();
@@ -78,15 +81,24 @@ public class BaseKey : MonoBehaviour
             {
                 case KeyType.Throw:
                     ImpulsePlayer(collision.gameObject);
+                    playerMovement.Die();
                     break;
                 case KeyType.Hole:
                     playerMovement.FallDown(100, GetComponent<SpriteRenderer>().sortingOrder);
+                    StartCoroutine(PlayerDeathDelay(playerMovement));
                     StartCoroutine(FallDown());
                     break;
+                case KeyType.Range:
+                    playerMovement.Die();
+                    break;
                 case KeyType.Explode:
+                    playerMovement.Die();
                     break;
                 case KeyType.Teleport:
                     playerMovement.Teleport(teleportPosition);
+                    break;
+                case KeyType.Goal:
+                    playerMovement.InvokeGoalReached();
                     break;
                 default:
                     break;
@@ -122,6 +134,12 @@ public class BaseKey : MonoBehaviour
 
             yield return null; // wait one frame
         }
+    }
+
+    private IEnumerator PlayerDeathDelay(Movement playerMovement)
+    {
+        yield return new WaitForSeconds(1.0f);
+        playerMovement.Die();
     }
 
     private void EmitRaycasts()
@@ -176,6 +194,8 @@ public class BaseKey : MonoBehaviour
     public KeyType GetKeyType() { return keyType; }
 
     public void SetTeleportPosition(Vector2 position) { teleportPosition = position; }
+
+    public void SetKeyType(KeyType type) { keyType = type; }
 
     public void ResetPosition()
     {
