@@ -119,6 +119,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &42301618 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5244362598805515321, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+  m_PrefabInstance: {fileID: 7679001292800483717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &46299524
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -849,6 +854,22 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1440653030150419254, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
   m_PrefabInstance: {fileID: 245136151}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &249157967 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1058310697154114840, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+  m_PrefabInstance: {fileID: 7679001292800483717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &273005587 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 681364632669671430, guid: 1304e8b3ec9d3bb4cb4c43a1f379cad3, type: 3}
+  m_PrefabInstance: {fileID: 7164311211056575738}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Unity.TextMeshPro::TMPro.TextMeshProUGUI
 --- !u!1001 &297535840
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2523,6 +2544,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Blade (1)
       objectReference: {fileID: 0}
+    - target: {fileID: 2295816932511228133, guid: aa9dcea643219b34d8d5b7144a61d59f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3968,6 +3993,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1428829900 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7751354019279231596, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+  m_PrefabInstance: {fileID: 7679001292800483717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1458850527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4171,6 +4201,16 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1440653030150419254, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
   m_PrefabInstance: {fileID: 1509012555}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1517114559 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 9089817021170039794, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+  m_PrefabInstance: {fileID: 7679001292800483717}
+  m_PrefabAsset: {fileID: 0}
+--- !u!82 &1549570587 stripped
+AudioSource:
+  m_CorrespondingSourceObject: {fileID: 1465232037859202119, guid: b640edf325df618458b535780a44a4bc, type: 3}
+  m_PrefabInstance: {fileID: 8584811686537244766}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1597279058
 PrefabInstance:
@@ -4584,6 +4624,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1440653030150419254, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
   m_PrefabInstance: {fileID: 1659399742}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1676250945 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7250238291714179050, guid: 71659901188f2014da4fe06d5e563b16, type: 3}
+  m_PrefabInstance: {fileID: 8549899312745775582}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1814099693
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -4689,6 +4734,11 @@ PrefabInstance:
 Transform:
   m_CorrespondingSourceObject: {fileID: 1440653030150419254, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
   m_PrefabInstance: {fileID: 1814099693}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1818953443 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7620997443892718697, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+  m_PrefabInstance: {fileID: 7679001292800483717}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1886712320
 GameObject:
@@ -5133,70 +5183,17 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1440653030150419254, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
   m_PrefabInstance: {fileID: 2003423312}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &2058070809
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 2058070811}
-  - component: {fileID: 2058070810}
-  - component: {fileID: 2058070812}
-  m_Layer: 0
-  m_Name: Managers
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &2058070810
+--- !u!114 &2058070812 stripped
 MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
+  m_CorrespondingSourceObject: {fileID: 6700723423401953335, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+  m_PrefabInstance: {fileID: 3296031712553036537}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058070809}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dc549204887b60b4884295eafc7ef162, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::GameManager
-  State: 0
---- !u!4 &2058070811
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058070809}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.29269, y: -0.92085, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2058070812
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2058070809}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3feabde4dcad2c84f94b4d0b82a1c3c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LettersOrderManager
-  finalWords:
-  - DO
-  - NOT
-  - TRUST
-  - ESC
-  displayText: {fileID: 928071253}
 --- !u!1 &2062197322
 GameObject:
   m_ObjectHideFlags: 0
@@ -5383,6 +5380,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 1440653030150419254, guid: 1e806376c1adb6342ba5fc9c38f7ef80, type: 3}
   m_PrefabInstance: {fileID: 2106638676}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2115796753 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8359626363640949811, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+  m_PrefabInstance: {fileID: 7679001292800483717}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2133911383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5546,6 +5548,99 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: aa9dcea643219b34d8d5b7144a61d59f, type: 3}
+--- !u!1001 &3296031712553036537
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1958751272708141673, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: m_Name
+      value: Managers
+      objectReference: {fileID: 0}
+    - target: {fileID: 3642985566421864336, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1676250945}
+    - target: {fileID: 3642985566421864336, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: keyboardsParent
+      value: 
+      objectReference: {fileID: 42301618}
+    - target: {fileID: 3642985566421864336, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: 'levels.Array.data[0]'
+      value: 
+      objectReference: {fileID: 1517114559}
+    - target: {fileID: 3642985566421864336, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: 'levels.Array.data[1]'
+      value: 
+      objectReference: {fileID: 249157967}
+    - target: {fileID: 3642985566421864336, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: 'levels.Array.data[2]'
+      value: 
+      objectReference: {fileID: 2115796753}
+    - target: {fileID: 3642985566421864336, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: 'levels.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1818953443}
+    - target: {fileID: 3642985566421864336, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: 'levels.Array.data[4]'
+      value: 
+      objectReference: {fileID: 1428829900}
+    - target: {fileID: 3978266336281432070, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: soundObject
+      value: 
+      objectReference: {fileID: 1549570587}
+    - target: {fileID: 6249119933427585012, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -2.29269
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249119933427585012, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.92085
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249119933427585012, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249119933427585012, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249119933427585012, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249119933427585012, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249119933427585012, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249119933427585012, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249119933427585012, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6249119933427585012, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6700723423401953335, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
+      propertyPath: displayText
+      value: 
+      objectReference: {fileID: 273005587}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: ded0bc44fb50bda45a81dc0470a5f560, type: 3}
 --- !u!1001 &4588890980797601522
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5603,6 +5698,63 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ef067d0a796bd204bbefaed0585c4c18, type: 3}
+--- !u!1001 &4709392744044661331
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 963894850685163011, guid: feec120147d0d064a84cb3046533791e, type: 3}
+      propertyPath: m_Name
+      value: SoundFXObject
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373967804072870189, guid: feec120147d0d064a84cb3046533791e, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373967804072870189, guid: feec120147d0d064a84cb3046533791e, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373967804072870189, guid: feec120147d0d064a84cb3046533791e, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373967804072870189, guid: feec120147d0d064a84cb3046533791e, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373967804072870189, guid: feec120147d0d064a84cb3046533791e, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373967804072870189, guid: feec120147d0d064a84cb3046533791e, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373967804072870189, guid: feec120147d0d064a84cb3046533791e, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373967804072870189, guid: feec120147d0d064a84cb3046533791e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373967804072870189, guid: feec120147d0d064a84cb3046533791e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7373967804072870189, guid: feec120147d0d064a84cb3046533791e, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: feec120147d0d064a84cb3046533791e, type: 3}
 --- !u!1001 &7164311211056575738
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5672,6 +5824,38 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 10018140910489216, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 10018140910489216, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 10018140910489216, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 10018140910489216, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 292369983757624373, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 292369983757624373, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 292369983757624373, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 292369983757624373, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
     - target: {fileID: 558371795353630167, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
       propertyPath: lettersOrderManager
       value: 
@@ -5736,14 +5920,418 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Border
       objectReference: {fileID: 0}
+    - target: {fileID: 1585944264540865998, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 1585944264540865998, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 1585944264540865998, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 1585944264540865998, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 1733795263453908641, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 1733795263453908641, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 1733795263453908641, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 1733795263453908641, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 1910475790812584538, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 1910475790812584538, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 1910475790812584538, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 1910475790812584538, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 1918519456764714420, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 1918519456764714420, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 1918519456764714420, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 1918519456764714420, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 1939498566718210261, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 1939498566718210261, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 1939498566718210261, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 1939498566718210261, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 2134745248024310037, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: keyType
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2134745248024310037, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 2134745248024310037, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 2134745248024310037, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 2134745248024310037, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 2181610712976165754, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 2181610712976165754, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 2181610712976165754, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 2181610712976165754, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 2258697617015357544, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 2258697617015357544, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 2258697617015357544, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 2258697617015357544, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 2418004562427676587, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 2418004562427676587, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 2418004562427676587, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 2418004562427676587, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
     - target: {fileID: 2495246158978892495, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
       propertyPath: lettersOrderManager
       value: 
       objectReference: {fileID: 2058070812}
+    - target: {fileID: 2510627583011750957, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 2510627583011750957, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 2510627583011750957, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 2510627583011750957, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 2845688491847716179, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 2845688491847716179, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 2845688491847716179, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 2845688491847716179, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 2896528630490269650, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 2896528630490269650, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 2896528630490269650, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 2896528630490269650, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 3041078707156673889, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 3041078707156673889, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 3041078707156673889, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 3041078707156673889, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
     - target: {fileID: 3235451575291263471, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
       propertyPath: m_IsTrigger
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3337339647390807983, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 3337339647390807983, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 3337339647390807983, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 3337339647390807983, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 3418122539713236440, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 3418122539713236440, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 3418122539713236440, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 3418122539713236440, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 3501927475364858228, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 3501927475364858228, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 3501927475364858228, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 3501927475364858228, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 3825179703836720182, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 3825179703836720182, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 3825179703836720182, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 3825179703836720182, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 3942185753569321782, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 3942185753569321782, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 3942185753569321782, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 3942185753569321782, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 3969512350106600774, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 3969512350106600774, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 3969512350106600774, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 3969512350106600774, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 4113572570278342648, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 4113572570278342648, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 4113572570278342648, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 4113572570278342648, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 4219019979576835551, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 4219019979576835551, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 4219019979576835551, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 4219019979576835551, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 4239577436626054103, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 4239577436626054103, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 4239577436626054103, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 4239577436626054103, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 4350466479791256098, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 4350466479791256098, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 4350466479791256098, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 4350466479791256098, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 4918362899917396250, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 4918362899917396250, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 4918362899917396250, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 4918362899917396250, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 5233474552972753534, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 5233474552972753534, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 5233474552972753534, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 5233474552972753534, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
     - target: {fileID: 5244362598805515321, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
       propertyPath: m_Name
       value: Teclado
@@ -5756,10 +6344,58 @@ PrefabInstance:
       propertyPath: lettersOrderManager
       value: 
       objectReference: {fileID: 2058070812}
+    - target: {fileID: 5670148190292513787, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 5670148190292513787, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 5670148190292513787, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 5670148190292513787, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 5817059579350409077, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 5817059579350409077, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 5817059579350409077, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 5817059579350409077, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
     - target: {fileID: 6019144092369490170, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
       propertyPath: lettersOrderManager
       value: 
       objectReference: {fileID: 2058070812}
+    - target: {fileID: 6050041694860758449, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 6050041694860758449, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 6050041694860758449, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 6050041694860758449, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
     - target: {fileID: 6276535577668006448, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
       propertyPath: lettersOrderManager
       value: 
@@ -5772,6 +6408,102 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Border
       objectReference: {fileID: 0}
+    - target: {fileID: 6699734219850539390, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 6699734219850539390, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 6699734219850539390, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 6699734219850539390, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 7046395317930287485, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 7046395317930287485, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 7046395317930287485, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 7046395317930287485, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 7112286854924877790, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 7112286854924877790, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 7112286854924877790, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 7112286854924877790, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 7118656803730794199, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 7118656803730794199, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 7118656803730794199, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 7118656803730794199, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 7292677265146028349, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 7292677265146028349, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 7292677265146028349, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 7292677265146028349, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 7375356125267202014, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 7375356125267202014, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 7375356125267202014, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 7375356125267202014, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
     - target: {fileID: 7429452887360171685, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
       propertyPath: m_Layer
       value: 7
@@ -5784,14 +6516,126 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7711212008710176655, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 7711212008710176655, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 7711212008710176655, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 7711212008710176655, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
     - target: {fileID: 7751354019279231596, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7825544118590389200, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 7825544118590389200, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 7825544118590389200, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 7825544118590389200, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 7926863760099682613, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 7926863760099682613, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 7926863760099682613, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 7926863760099682613, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 8096037965595306164, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 8096037965595306164, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 8096037965595306164, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 8096037965595306164, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 8260627228735367052, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 8260627228735367052, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 8260627228735367052, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 8260627228735367052, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+    - target: {fileID: 8348421483999282687, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 8348421483999282687, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 8348421483999282687, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 8348421483999282687, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
     - target: {fileID: 8359626363640949811, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8738626702120504845, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 8738626702120504845, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 8738626702120504845, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 8738626702120504845, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
     - target: {fileID: 8995117689270894517, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -5804,6 +6648,22 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 9134671369264135194, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: bombSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
+    - target: {fileID: 9134671369264135194, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: clickSound
+      value: 
+      objectReference: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+    - target: {fileID: 9134671369264135194, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: shurikenSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+    - target: {fileID: 9134671369264135194, guid: 5f16cee8e8251fd4dacd071b76cb4762, type: 3}
+      propertyPath: fallImpulseSound
+      value: 
+      objectReference: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -5863,13 +6723,74 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7250238291714179050, guid: 71659901188f2014da4fe06d5e563b16, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 71659901188f2014da4fe06d5e563b16, type: 3}
+--- !u!1001 &8584811686537244766
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 1465232037859202119, guid: b640edf325df618458b535780a44a4bc, type: 3}
+      propertyPath: Loop
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049165001601206797, guid: b640edf325df618458b535780a44a4bc, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -0.42831
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049165001601206797, guid: b640edf325df618458b535780a44a4bc, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -1.29265
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049165001601206797, guid: b640edf325df618458b535780a44a4bc, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049165001601206797, guid: b640edf325df618458b535780a44a4bc, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049165001601206797, guid: b640edf325df618458b535780a44a4bc, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049165001601206797, guid: b640edf325df618458b535780a44a4bc, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049165001601206797, guid: b640edf325df618458b535780a44a4bc, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049165001601206797, guid: b640edf325df618458b535780a44a4bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049165001601206797, guid: b640edf325df618458b535780a44a4bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5049165001601206797, guid: b640edf325df618458b535780a44a4bc, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6750529331113004964, guid: b640edf325df618458b535780a44a4bc, type: 3}
+      propertyPath: m_Name
+      value: SoundObject
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b640edf325df618458b535780a44a4bc, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -5878,10 +6799,12 @@ SceneRoots:
   - {fileID: 1886712323}
   - {fileID: 7679001292800483717}
   - {fileID: 1414308338}
-  - {fileID: 2058070811}
+  - {fileID: 3296031712553036537}
   - {fileID: 8549899312745775582}
   - {fileID: 522477687}
   - {fileID: 2605000828473069031}
   - {fileID: 7164311211056575738}
   - {fileID: 4588890980797601522}
   - {fileID: 902682070}
+  - {fileID: 4709392744044661331}
+  - {fileID: 8584811686537244766}

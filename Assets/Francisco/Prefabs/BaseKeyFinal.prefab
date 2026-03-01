@@ -152,6 +152,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 255ed8628e5d3da4aa24abb8413698b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::BaseKey
+  blade: {fileID: 2295816932511228133, guid: aa9dcea643219b34d8d5b7144a61d59f, type: 3}
   playerLayerName: Player
   keyID: 
   keyType: 0
@@ -165,6 +166,10 @@ MonoBehaviour:
   - {x: 0, y: 1}
   - {x: 0, y: -1}
   raycastDistance: 1
+  clickSound: {fileID: 8300000, guid: b0529f073e2521e4fbca992e83a20255, type: 3}
+  fallImpulseSound: {fileID: 8300000, guid: 6c4866317b1740f4481da25fb331ece7, type: 3}
+  shurikenSound: {fileID: 8300000, guid: 94bafdb874d769a43b4d9fdaeb25bb59, type: 3}
+  bombSound: {fileID: 8300000, guid: 699645f230d7dfd4f9beb914e5a4f12e, type: 3}
 --- !u!1 &8802017799670716391
 GameObject:
   m_ObjectHideFlags: 0

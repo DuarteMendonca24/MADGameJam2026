@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] levels;
     public GameObject transition;
     public GameObject keyboardsParent;
-    private TransitionController transitionController;
+    //private TransitionController transitionController;
     private Dictionary<int, KeyBoardManager> keyBoardManagers = new Dictionary<int, KeyBoardManager>();
 
     public GameObject player;
@@ -37,6 +37,9 @@ public class GameManager : MonoBehaviour
 
     private int currentGameLevel = 1;
 
+    //Audio
+    [SerializeField] private AudioClip BackgroundSound;
+
 
 
     private void Awake()
@@ -50,7 +53,7 @@ public class GameManager : MonoBehaviour
             playerMovement.letterGoalReached += OnPlayerReachedLetter;
             playerMovement.playerDied += OnPlayerDeath;
             
-            transitionController = transition.GetComponent<TransitionController>();
+            //transitionController = transition.GetComponent<TransitionController>();
 
             lettersOrderManager.Initialize();
             lettersOrderManager.wordCompleted += OnLevelCompleted;
@@ -67,10 +70,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
-
-
-
+    private void Start()
+    {
+        SoundManager.Instance.PlaySoundClip(BackgroundSound, transform, 1f);
     }
 
     private void GetKeyboardManagers()
@@ -150,7 +154,7 @@ public class GameManager : MonoBehaviour
     private IEnumerator TransitionIntoNextLevel()
     {
         transition.SetActive(true);
-        transitionController.PlayTransitionOutAnimation();
+        //transitionController.PlayTransitionOutAnimation();
         yield return new WaitForSeconds(1f);
         //MOSTRAR BD???
         //bd.setActive(true)
@@ -160,7 +164,7 @@ public class GameManager : MonoBehaviour
         //transitionController.PlayTransitionOutAnimation();
 
         StartLevel();
-        transitionController.PlayTransitionInAnimation();
+        //transitionController.PlayTransitionInAnimation();
         yield return new WaitForSeconds(1f);
         transition.SetActive(false);
 

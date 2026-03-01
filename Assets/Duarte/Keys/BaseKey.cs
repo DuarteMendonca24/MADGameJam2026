@@ -47,6 +47,10 @@ public class BaseKey : MonoBehaviour
 
     private Vector2 teleportPosition;
 
+    //Audio
+
+    [SerializeField] private AudioClip clickSound, fallImpulseSound, shurikenSound, bombSound;
+
 
     private void Awake()
     {
@@ -92,6 +96,7 @@ public class BaseKey : MonoBehaviour
                     playerMovement.Die();
                     break;
                 case KeyType.Explode:
+                    SoundFXManager.Instance.PlaySoundFXClip(bombSound, transform, 1f);
                     playerMovement.Die();
                     break;
                 case KeyType.Teleport:
@@ -126,6 +131,8 @@ public class BaseKey : MonoBehaviour
     {
         float elapsedTime = 0.0f;
 
+        SoundFXManager.Instance.PlaySoundFXClip(fallImpulseSound, transform, 1f);
+
         while (elapsedTime < fallingDownDuration)
         {
             transform.position += Vector3.down * fallingDownSpeed * Time.deltaTime;
@@ -154,9 +161,10 @@ public class BaseKey : MonoBehaviour
             {
                 bladeExpeled = true;
                 GameObject go = Instantiate(blade, transform);
-                go.AddComponent<Rigidbody2D>().gravityScale = 0;
+                go.AddComponent<Rigidbody2D>();
+                go.GetComponent<Rigidbody2D>().gravityScale = 0;
                 go.GetComponent<Rigidbody2D>().AddForce(direction * 1000, ForceMode2D.Force);
-                this.enabled = false;
+                SoundFXManager.Instance.PlaySoundFXClip(shurikenSound, transform, 1f);
                 print("Player Hit by Raycast");
                 Debug.Log(direction);
             }
@@ -172,6 +180,7 @@ public class BaseKey : MonoBehaviour
         if (isPressed)
         {
             targetPosition = new Vector2(startPosition.x, startPosition.y + keyLerpTargetIncrement);
+            SoundFXManager.Instance.PlaySoundFXClip(clickSound, transform, 1f);
         }
         else
         {
