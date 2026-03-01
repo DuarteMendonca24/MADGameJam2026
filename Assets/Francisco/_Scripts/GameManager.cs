@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
 {
     public GameObject[] levels;
     public GameObject transition;
+    public GameObject keyboardsParent;
     private TransitionController transitionController;
     private Dictionary<int, KeyBoardManager> keyBoardManagers = new Dictionary<int, KeyBoardManager>();
 
@@ -30,9 +31,13 @@ public class GameManager : MonoBehaviour
 
     public GameState State;
 
+    public LettersOrderManager lettersOrderManager;
+
     public static event Action<GameState> OnGameStateChanged;
 
     private int currentGameLevel = 1;
+
+ 
 
     private void Awake()
     {
@@ -40,30 +45,37 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+            player.GetComponent<Movement>().letterGoalReached += OnPlayerReachedLetter;
+            //transitionController = transition.GetComponent<TransitionController>();
+
+            SetGameLevel(1);
+            StartLevel();
+            State = GameState.InGame;
+
+            lettersOrderManager.Initialize();
+
+            GetKeyboardManagers();
+            PopulateGoalKey();
         }
         else
         {
             Destroy(gameObject);
         }
-        transitionController = transition.GetComponent<TransitionController>();
-        GetKeyboardManagers();
+
+        
+
+        
     }
 
     private void GetKeyboardManagers()
     {
         for(int i = 0; i < levels.Length; i++)
         {
-            KeyBoardManager kbm = this.transform.GetChild(i).GetComponent<KeyBoardManager>();
+            KeyBoardManager kbm = keyboardsParent.transform.GetChild(i).GetComponent<KeyBoardManager>();
             keyBoardManagers.Add(i+1,kbm);
         }
     }
 
-    private void Start()
-    {
-        SetGameLevel(1);
-        StartLevel();
-        State = GameState.InGame;
-    }
 
     public int GetGameLevel() { return currentGameLevel; }
 
@@ -94,6 +106,17 @@ public class GameManager : MonoBehaviour
     public void OnPlayerDeath()
     {
         StartCoroutine(PlayerDeathTransition());
+    }
+
+    private void PopulateGoalKey()
+    {
+        keyBoardManagers[currentGameLevel].SetGoalKey(lettersOrderManager.GetDisplayedLetter());
+    }
+
+    private void OnPlayerReachedLetter()
+    {
+        lettersOrderManager.ShowRandomLetter(currentGameLevel);
+        PopulateGoalKey();
     }
 
     public IEnumerator PlayerDeathTransition()

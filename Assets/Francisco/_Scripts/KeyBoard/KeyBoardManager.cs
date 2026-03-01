@@ -10,7 +10,7 @@ public class KeyBoardManager : MonoBehaviour
 
     private int gameLevel;
 
-    private string keys = "QWERTYUIOPASDFGHJKL�ZXCVBNM1234567890_.`�+?";
+    private string keys = "QWERTYUIOPASDFGHJKLÇZXCVBNM1234567890_.`´+?";
 
     private List<BaseKey> baseKeys = new List<BaseKey>();
 
@@ -85,6 +85,24 @@ public class KeyBoardManager : MonoBehaviour
 
                 Debug.Log(setOfKeys);
             }
+        }
+    }
+
+    public void SetGoalKey(string displayedLetter)
+    {
+        foreach (BaseKey key in baseKeys)
+        {
+            // Clear previous goal keys
+            if (key.GetKeyType() == KeyType.Goal)
+            {
+                key.SetKeyType(KeyType.None);
+            }
+
+            if (key.GetKeyID() == displayedLetter.ToString())
+            {
+                key.SetKeyType(KeyType.Goal);
+            }
+
         }
     }
 

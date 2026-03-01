@@ -11,7 +11,8 @@ public enum KeyType
     Range,
     Throw,
     Teleport,
-    Spawner
+    Spawner,
+    Goal
 }
 
 [RequireComponent(typeof(Collider2D))]
@@ -89,6 +90,9 @@ public class BaseKey : MonoBehaviour
                     break;
                 case KeyType.Teleport:
                     playerMovement.Teleport(teleportPosition);
+                    break;
+                case KeyType.Goal:
+                    playerMovement.InvokeGoalReached();
                     break;
                 default:
                     break;
@@ -175,6 +179,8 @@ public class BaseKey : MonoBehaviour
     public KeyType GetKeyType() { return keyType; }
 
     public void SetTeleportPosition(Vector2 position) { teleportPosition = position; }
+
+    public void SetKeyType(KeyType type) { keyType = type; }
 
     public void ResetPosition()
     {

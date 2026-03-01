@@ -5,6 +5,9 @@ using UnityEngine;
 
 public class Movement : MonoBehaviour
 {
+    public delegate void LetterGoalReached();
+    public LetterGoalReached letterGoalReached;
+
     public float moveSpeed = 5f;
     public Rigidbody2D rb;
     
@@ -90,5 +93,11 @@ public class Movement : MonoBehaviour
         color.a = 1.0f;
         spriteRenderer.color = color;
 
+    }
+
+    public void InvokeGoalReached()
+    {
+        letterGoalReached?.Invoke();
+        print("Word invoke");
     }
 }

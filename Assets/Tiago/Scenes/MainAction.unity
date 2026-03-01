@@ -5452,7 +5452,7 @@ MonoBehaviour:
   - {fileID: 449534369}
   - {fileID: 1534467380}
   transition: {fileID: 1626070380}
-  playerPrefab: {fileID: 0}
+  player: {fileID: 0}
   State: 0
 --- !u!4 &2058070811
 Transform:
