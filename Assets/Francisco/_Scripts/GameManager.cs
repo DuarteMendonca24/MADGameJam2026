@@ -22,7 +22,7 @@ public class GameManager : MonoBehaviour
     public GameObject[] levels;
     public GameObject transition;
     public GameObject keyboardsParent;
-    private TransitionController transitionController;
+    //private TransitionController transitionController;
     private Dictionary<int, KeyBoardManager> keyBoardManagers = new Dictionary<int, KeyBoardManager>();
 
     public GameObject player;
@@ -36,6 +36,9 @@ public class GameManager : MonoBehaviour
     public static event Action<GameState> OnGameStateChanged;
 
     private int currentGameLevel = 1;
+
+    //Audio
+    [SerializeField] private AudioClip BackgroundSound;
 
 
 
@@ -67,10 +70,11 @@ public class GameManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
+    }
 
-
-
-
+    private void Start()
+    {
+        SoundManager.Instance.PlaySoundClip(BackgroundSound, transform, 1f);
     }
 
     private void GetKeyboardManagers()
