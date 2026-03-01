@@ -19,7 +19,7 @@ public enum KeyType
 public class BaseKey : MonoBehaviour
 {
 
-    [SerializeField] GameObject blade;
+    [SerializeField] GameObject blade, FinalBattle;
     [SerializeField] private bool bladeExpeled = false;
 
     // The player layer to check to detect collisions
@@ -55,6 +55,8 @@ public class BaseKey : MonoBehaviour
     //Audio
 
     [SerializeField] private AudioClip clickSound, fallImpulseSound, shurikenSound, bombSound;
+    //Audio
+    [SerializeField] private AudioClip FightSound;
 
 
     private void Awake()
@@ -127,6 +129,7 @@ public class BaseKey : MonoBehaviour
                     break;
                 case KeyType.Goal:
                     playerMovement.InvokeGoalReached();
+                    TryEnterFinalBattle(playerMovement);
                     break;
                 default:
                     break;
@@ -134,7 +137,17 @@ public class BaseKey : MonoBehaviour
         }
     }
 
- 
+    private void TryEnterFinalBattle(Movement movement)
+    {
+        if(GameManager.Instance.GetGameLevel() == 5)
+        {
+            movement.inFinalBattle = true;
+            FinalBattle.SetActive(true);
+            SoundManager.Instance.StopSoundClip();
+            SoundManager.Instance.PlaySoundClip(FightSound, transform, 1f);
+        }
+    }
+
     private void OnTriggerExit2D(Collider2D collision)
     {
         if (keyType == KeyType.None || keyType == KeyType.Spawner || keyType == KeyType.Throw)

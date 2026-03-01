@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 875a08b84763c5646a226accb0771fcf
+guid: 8158bd9c7339d8d4cb946795aa68d751
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6829839532366850084
-    second: ESC Imposter 1_0
+      213: -7320486383630672780
+    second: MadJamSticker_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: ESC Imposter 1_0
+      name: MadJamSticker_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 146
-        height: 167
+        x: 2
+        y: 6
+        width: 685
+        height: 775
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 42865af5ed678ce50800000000000000
-      internalID: 6829839532366850084
+      spriteID: 47c1c907b68686a90800000000000000
+      internalID: -7320486383630672780
       vertices: []
       indices: 
       edges: []
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      ESC Imposter 1_0: 6829839532366850084
+      MadJamSticker_0: -7320486383630672780
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
