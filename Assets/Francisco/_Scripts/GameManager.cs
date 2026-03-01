@@ -136,10 +136,10 @@ public class GameManager : MonoBehaviour
     //Put everything back in place
     private void ResetLevel()
     {
-        player.transform.position = keyBoardManagers[currentGameLevel].playerSpawnPosition;
-        player.GetComponent<Movement>().Respawn();
+        player.GetComponent<Movement>().Respawn(
+            keyBoardManagers[currentGameLevel].playerSpawnPosition);
+        
         keyBoardManagers[currentGameLevel].ResetKeyPositions();
-        player.GetComponent<Movement>().StopFallDown();
         lettersOrderManager.ResetLetter(currentGameLevel);
     }
 
