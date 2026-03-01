@@ -19,11 +19,14 @@ public class Movement : MonoBehaviour
     
     private BoxCollider2D collider;
     private SpriteRenderer spriteRenderer;
+    [SerializeField] private Animator animator;
+
 
     private bool blockMovement = false;
     public bool isDead = false;
 
     private int originalSortingOrder;
+    private bool animating = false;
 
     void Awake()
     {
@@ -31,6 +34,7 @@ public class Movement : MonoBehaviour
         collider = GetComponent<BoxCollider2D>();
         spriteRenderer = transform.GetChild(0).GetComponent<SpriteRenderer>();
         originalSortingOrder = spriteRenderer.sortingOrder;
+        animator = transform.GetChild(0).GetComponent<Animator>();
     }
 
     void Update()
@@ -44,24 +48,68 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.D))
         {
             movement.x = 1;
+            if (!animating)
+            {
+                animator.SetTrigger("Andar_Direita");
+                animating = true;
+            }
         }
-        if (Input.GetKey(KeyCode.A))
+        else if (Input.GetKeyUp(KeyCode.D))
+        {
+            animator.SetTrigger("Idle_Direita");
+            animating = false;
+        }
+
+        else if (Input.GetKey(KeyCode.A))
         {
             movement.x = -1;
+            if (!animating)
+            {
+                animator.SetTrigger("Andar_Esquerda");
+                animating = true;
+            }
+            
         }
-        if (Input.GetKey(KeyCode.S))
+        else if (Input.GetKeyUp(KeyCode.A))
+        {
+            animator.SetTrigger("Idle_Esquerda");
+            animating = false;
+        }
+
+        else if (Input.GetKey(KeyCode.S))
         {
             movement.y = -1;
+            if (!animating)
+            {
+                animator.SetTrigger("Andar_Frente");
+                animating = true;
+            }
         }
-        if (Input.GetKey(KeyCode.W))
+        else if (Input.GetKeyUp(KeyCode.S))
+        {
+            animator.SetTrigger("Idle_Frente");
+            animating = false;
+        }
+
+        else if (Input.GetKey(KeyCode.W))
         {
             movement.y = 1;
+            if (!animating)
+            {
+                animator.SetTrigger("Andar_Costas");
+                animating = true;
+            }
+        }
+        else if (Input.GetKeyUp(KeyCode.W))
+        {
+            animator.SetTrigger("Idle_Costas");
+            animating = false;
         }
     }
 
     void FixedUpdate()
     {
-        if (movement.x != 0) { movement.y = 0; }
+        if (movement.x != 0) { movement.y = 0;} 
         rb.linearVelocity = (movement.normalized * moveSpeed) + externalForce;
 
         // Slowly decay impulses (fake friction)
