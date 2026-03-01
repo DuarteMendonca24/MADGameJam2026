@@ -4,19 +4,40 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Collections;
+using UnityEditor.PackageManager.Requests;
+using UnityEditorInternal;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+public enum GameState
+{
+    PauseMenuScreen,
+    InGame,
+    EndGame
+}
+
 public class GameManager : MonoBehaviour
 {
+    public GameObject[] levels;
+    public GameObject transition;
+    public GameObject keyboardsParent;
+    private TransitionController transitionController;
+    private Dictionary<int, KeyBoardManager> keyBoardManagers = new Dictionary<int, KeyBoardManager>();
+
+    public GameObject player;
+
     public static GameManager Instance;
 
     public GameState State;
 
+    public LettersOrderManager lettersOrderManager;
+
     public static event Action<GameState> OnGameStateChanged;
 
-    private int gameLevel = 1;
+    private int currentGameLevel = 1;
+
+
 
     private void Awake()
     {
@@ -24,17 +45,47 @@ public class GameManager : MonoBehaviour
         {
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+            Movement playerMovement = player.GetComponent<Movement>();
+            playerMovement.letterGoalReached += OnPlayerReachedLetter;
+            playerMovement.playerDied += OnPlayerDeath;
+            
+            transitionController = transition.GetComponent<TransitionController>();
+
+            lettersOrderManager.Initialize();
+            lettersOrderManager.wordCompleted += OnLevelCompleted;
+
+            SetGameLevel(1);
+            State = GameState.InGame;
+
+            GetKeyboardManagers();
+            PopulateGoalKey();
+
+            StartLevel();
         }
         else
         {
             Destroy(gameObject);
         }
+
+
+
+
     }
 
-    private void Start()
+    private void GetKeyboardManagers()
     {
-        State = GameState.MainMenuScreen;
+        for (int i = 0; i < levels.Length; i++)
+        {
+            KeyBoardManager kbm = keyboardsParent.transform.GetChild(i).GetComponent<KeyBoardManager>();
+            keyBoardManagers.Add(i + 1, kbm);
+        }
     }
+
+
+    public int GetGameLevel() { return currentGameLevel; }
+
+    public void SetGameLevel(int gameLevel) { this.currentGameLevel = gameLevel; }
 
     public void UpdateGameState(GameState newState)
     {
@@ -42,7 +93,7 @@ public class GameManager : MonoBehaviour
 
         switch (newState)
         {
-            case GameState.MainMenuScreen:
+            case GameState.PauseMenuScreen:
                 Cursor.visible = true;
                 break;
             case GameState.InGame:
@@ -58,9 +109,80 @@ public class GameManager : MonoBehaviour
         OnGameStateChanged?.Invoke(newState);
     }
 
-    public int GetgameLevel() { return gameLevel; }
+    public void OnPlayerDeath()
+    {
+        PlayerDeathTransition();
+    }
 
-    public  void SetGameLevel(int gameLevel) { this.gameLevel = gameLevel; }
+    private void PopulateGoalKey()
+    {
+        keyBoardManagers[currentGameLevel].SetGoalKey(lettersOrderManager.GetDisplayedLetter());
+    }
+
+    private void OnPlayerReachedLetter()
+    {
+        lettersOrderManager.ShowRandomLetter(currentGameLevel);
+        PopulateGoalKey();
+    }
+
+    public void PlayerDeathTransition()
+    {   
+        // Por favor corrigir, obrigado
+        //StartCoroutine(transitionController.PlayFullTransition());
+        ResetLevel();
+    }
+
+    //Put everything back in place
+    private void ResetLevel()
+    {
+        keyBoardManagers[currentGameLevel].ResetKeyPositions();
+        player.GetComponent<Movement>().StopFallDown();
+        player.transform.position = keyBoardManagers[currentGameLevel].playerSpawnPosition;
+        player.GetComponent<Movement>().Respawn();
+    }
+
+    public void OnLevelCompleted()
+    {
+        SetGameLevel(currentGameLevel + 1);
+        StartCoroutine(TransitionIntoNextLevel());
+    }
+
+    private IEnumerator TransitionIntoNextLevel()
+    {
+        transition.SetActive(true);
+        transitionController.PlayTransitionOutAnimation();
+        yield return new WaitForSeconds(1f);
+        //MOSTRAR BD???
+        //bd.setActive(true)
+        //transitionController.PlayTransitionInAnimation();
+        //yield return new WaitForSeconds(10f);
+        //bd.setActive(false)
+        //transitionController.PlayTransitionOutAnimation();
+
+        StartLevel();
+        transitionController.PlayTransitionInAnimation();
+        yield return new WaitForSeconds(1f);
+        transition.SetActive(false);
+
+        lettersOrderManager.ShowRandomLetter(currentGameLevel);
+        PopulateGoalKey();
+    }
+
+    private void StartLevel()
+    {
+        foreach (GameObject level in levels)
+        {
+            if (level.name.Contains(currentGameLevel.ToString()))
+            {
+                player.transform.position = keyBoardManagers[currentGameLevel].playerSpawnPosition;
+                level.SetActive(true);
+            }
+            else
+            {
+                level.SetActive(false);
+            }
+        }
+    }
 
     public void StartGame()
     {
@@ -68,16 +190,5 @@ public class GameManager : MonoBehaviour
         //SceneManager.LoadScene("FinalScene");
     }
 
-    public void QuitGame()
-    {
-        Application.Quit();
-    }
-
 }
 
-public enum GameState
-{
-    MainMenuScreen,
-    InGame,
-    EndGame
-}

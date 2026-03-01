@@ -10,7 +10,7 @@ public class KeyBoardManager : MonoBehaviour
 
     private int gameLevel;
 
-    private string keys = "QWERTYUIOPASDFGHJKLÇZXCVBNM1234567890_.`´+?";
+    private string keys = "QWERTYUIOPASDFGHJKLÃ‡ZXCVBNM1234567890_.`Â´+?";
 
     private List<BaseKey> baseKeys = new List<BaseKey>();
 
@@ -58,7 +58,7 @@ public class KeyBoardManager : MonoBehaviour
 
     private void Start()
     {
-        gameLevel = GameManager.Instance.GetgameLevel();
+        gameLevel = GameManager.Instance.GetGameLevel();
         SetRandomKeys();
     }
 
@@ -82,6 +82,24 @@ public class KeyBoardManager : MonoBehaviour
                 else { key.GetChild(0).Find("Text (TMP)").gameObject.GetComponent<TextMeshProUGUI>().text = key.gameObject.GetComponent<BaseKey>().GetKeyID(); }
                 
             }
+        }
+    }
+
+    public void SetGoalKey(string displayedLetter)
+    {
+        foreach (BaseKey key in baseKeys)
+        {
+            // Clear previous goal keys
+            if (key.GetKeyType() == KeyType.Goal)
+            {
+                key.SetKeyType(KeyType.None);
+            }
+
+            if (key.GetKeyID() == displayedLetter.ToString())
+            {
+                key.SetKeyType(KeyType.Goal);
+            }
+
         }
     }
 
