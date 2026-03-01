@@ -134,28 +134,30 @@ public class GameManager : MonoBehaviour
         // Por favor corrigir, obrigado
         //StartCoroutine(transitionController.PlayFullTransition());
         ResetLevel();
+        PopulateGoalKey();
     }
 
     //Put everything back in place
     private void ResetLevel()
     {
+        player.GetComponent<Movement>().Respawn(
+            keyBoardManagers[currentGameLevel].playerSpawnPosition);
+        
         keyBoardManagers[currentGameLevel].ResetKeyPositions();
-        player.GetComponent<Movement>().StopFallDown();
-        player.transform.position = keyBoardManagers[currentGameLevel].playerSpawnPosition;
-        player.GetComponent<Movement>().Respawn();
+        lettersOrderManager.ResetLetter(currentGameLevel);
     }
 
     public void OnLevelCompleted()
     {
         SetGameLevel(currentGameLevel + 1);
-        StartCoroutine(TransitionIntoNextLevel());
+        TransitionIntoNextLevel();
     }
 
-    private IEnumerator TransitionIntoNextLevel()
+    private void TransitionIntoNextLevel()
     {
-        transition.SetActive(true);
+        //transition.SetActive(true);
         //transitionController.PlayTransitionOutAnimation();
-        yield return new WaitForSeconds(1f);
+        //yield return new WaitForSeconds(1f);
         //MOSTRAR BD???
         //bd.setActive(true)
         //transitionController.PlayTransitionInAnimation();
@@ -164,9 +166,9 @@ public class GameManager : MonoBehaviour
         //transitionController.PlayTransitionOutAnimation();
 
         StartLevel();
-        //transitionController.PlayTransitionInAnimation();
-        yield return new WaitForSeconds(1f);
-        transition.SetActive(false);
+        // transitionController.PlayTransitionInAnimation();
+        // yield return new WaitForSeconds(1f);
+        // transition.SetActive(false);
 
         lettersOrderManager.ShowRandomLetter(currentGameLevel);
         PopulateGoalKey();
