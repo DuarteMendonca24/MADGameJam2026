@@ -168,6 +168,7 @@ public class Movement : MonoBehaviour
 
     public void Respawn(Vector2 respawnPos)
     {
+        collider.enabled = false;
         rb.linearVelocity = Vector2.zero;
         transform.position = respawnPos;
         animator.enabled = false;
@@ -176,5 +177,6 @@ public class Movement : MonoBehaviour
         animating = false;
         blockMovement = false;
         StopFallDown();
+        collider.enabled = true;
     }
 }

@@ -172,8 +172,12 @@ public class GameManager : MonoBehaviour
         // yield return new WaitForSeconds(1f);
         // transition.SetActive(false);
 
-        lettersOrderManager.ShowRandomLetter(currentGameLevel);
-        PopulateGoalKey();
+        if (currentGameLevel != 5)
+        {
+            lettersOrderManager.ShowRandomLetter(currentGameLevel);
+            PopulateGoalKey();
+        }
+       
     }
 
     private void StartLevel()
@@ -182,7 +186,9 @@ public class GameManager : MonoBehaviour
         {
             if (level.name.Contains(currentGameLevel.ToString()))
             {
-                player.transform.position = keyBoardManagers[currentGameLevel].playerSpawnPosition;
+
+                player.GetComponent<Movement>().Respawn(
+                    keyBoardManagers[currentGameLevel].playerSpawnPosition);
                 level.SetActive(true);
             }
             else

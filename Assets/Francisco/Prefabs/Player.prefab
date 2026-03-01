@@ -161,10 +161,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c388a484f2b3f0744a4df8216ef5d978, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Movement
-  moveSpeed: 5
+  moveSpeed: 3
   rb: {fileID: 0}
   animator: {fileID: 2559184757198381818}
-  isDead: 0
+  animating: 0
+  inFinalBattle: 0
 --- !u!50 &8854132813533405283
 Rigidbody2D:
   serializedVersion: 5
