@@ -9,5 +9,10 @@ public class BladeDestruction : MonoBehaviour
         {
             Destroy(gameObject);
         }
+        else if (collision.gameObject.tag == "Player")
+        {
+            print("BLADE NO PLAYER");
+            collision.gameObject.GetComponent<Movement>().Die();
+        }
     }
 }

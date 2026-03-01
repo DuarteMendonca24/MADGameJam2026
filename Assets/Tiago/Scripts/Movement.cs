@@ -23,7 +23,6 @@ public class Movement : MonoBehaviour
 
 
     private bool blockMovement = false;
-    public bool isDead = false;
 
     private int originalSortingOrder;
     private bool animating = false;
@@ -43,7 +42,6 @@ public class Movement : MonoBehaviour
         movement.y = 0;
 
         if (blockMovement ) { return; }
-        if (isDead) {  return; }
 
         if (Input.GetKey(KeyCode.D))
         {
@@ -125,7 +123,7 @@ public class Movement : MonoBehaviour
 
     public void Die()
     {
-        isDead = true;
+        blockMovement = true;
         playerDied?.Invoke();
     }
 
@@ -164,9 +162,15 @@ public class Movement : MonoBehaviour
         print("Word invoke");
     }
 
-    public void Respawn()
+    public void Respawn(Vector2 respawnPos)
     {
-        isDead = false;
         rb.linearVelocity = Vector2.zero;
+        transform.position = respawnPos;
+        animator.enabled = false;
+        animator.enabled = true;
+        animator.SetTrigger("Idle_Frente");
+        animating = false;
+        blockMovement = false;
+        StopFallDown();
     }
 }
