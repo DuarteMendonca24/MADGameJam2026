@@ -16,6 +16,8 @@ public class SoundManager : MonoBehaviour
 
     public void PlaySoundClip(AudioClip audioClip, Transform spawnTransform, float volume)
     {
+        AudioSource audioSource = Instantiate(soundObject, spawnTransform.position, Quaternion.identity);
+
         soundObject.clip = audioClip;
 
         soundObject.volume = volume;
